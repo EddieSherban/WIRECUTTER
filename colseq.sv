@@ -1,4 +1,4 @@
-/* 
+g/* 
 Module: colseq
 Author: Eddie Sherban
 Date: January 22, 2023
@@ -6,6 +6,8 @@ Date: January 22, 2023
 In this module, the flip flop constantly counts up, cycling through the columns 
 and will keep counting as long as the button is not pressed (the button being kpr)
 */
+
+//Martin's bout to pull your nuts
 
 module colseq ( output logic [3:0] kpc, 					// column output
 					 input logic clk, input logic reset_n,
