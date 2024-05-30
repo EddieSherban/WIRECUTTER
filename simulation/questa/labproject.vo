@@ -1,0 +1,4311 @@
+// Copyright (C) 2022  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition"
+
+// DATE "04/10/2023 15:59:00"
+
+// 
+// Device: Altera 5CSEMA4U23C6 Package UFBGA672
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module labproject (
+	GPIO_1,
+	stepsignal,
+	reset_n,
+	FPGA_CLK1_50);
+output 	[35:0] GPIO_1;
+output 	stepsignal;
+input 	reset_n;
+input 	FPGA_CLK1_50;
+
+// Design Ports Information
+// GPIO_1[0]	=>  Location: PIN_Y15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[1]	=>  Location: PIN_AG28,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[2]	=>  Location: PIN_AA15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[3]	=>  Location: PIN_AH27,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[4]	=>  Location: PIN_AG26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[5]	=>  Location: PIN_AH24,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[6]	=>  Location: PIN_AF23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[7]	=>  Location: PIN_AE22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[8]	=>  Location: PIN_AF21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[9]	=>  Location: PIN_AG20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[10]	=>  Location: PIN_AG19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[11]	=>  Location: PIN_AF20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[12]	=>  Location: PIN_AC23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[13]	=>  Location: PIN_AG18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[14]	=>  Location: PIN_AH26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[15]	=>  Location: PIN_AA19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[16]	=>  Location: PIN_AG24,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[17]	=>  Location: PIN_AF25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[18]	=>  Location: PIN_AH23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[19]	=>  Location: PIN_AG23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[20]	=>  Location: PIN_AE19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[21]	=>  Location: PIN_AF18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[22]	=>  Location: PIN_AD19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[23]	=>  Location: PIN_AE20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[24]	=>  Location: PIN_AE24,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[25]	=>  Location: PIN_AD20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[26]	=>  Location: PIN_AF22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[27]	=>  Location: PIN_AH22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[28]	=>  Location: PIN_AH19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[29]	=>  Location: PIN_AH21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[30]	=>  Location: PIN_AG21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[31]	=>  Location: PIN_AH18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[32]	=>  Location: PIN_AD23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[33]	=>  Location: PIN_AE23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[34]	=>  Location: PIN_AA18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// GPIO_1[35]	=>  Location: PIN_AC22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// stepsignal	=>  Location: PIN_AE26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// reset_n	=>  Location: PIN_AH17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// FPGA_CLK1_50	=>  Location: PIN_V11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \FPGA_CLK1_50~input_o ;
+wire \FPGA_CLK1_50~inputCLKENA0_outclk ;
+wire \reset_n~input_o ;
+wire \motortest_0|Add1~45_sumout ;
+wire \motortest_0|count[3]~28_combout ;
+wire \motortest_0|count[28]~DUPLICATE_q ;
+wire \motortest_0|Add1~90 ;
+wire \motortest_0|Add1~6 ;
+wire \motortest_0|Add1~85_sumout ;
+wire \motortest_0|Add0~6 ;
+wire \motortest_0|Add0~85_sumout ;
+wire \motortest_0|count[30]~23_combout ;
+wire \motortest_0|count[30]~DUPLICATE_q ;
+wire \motortest_0|LessThan1~4_combout ;
+wire \motortest_0|LessThan0~0_combout ;
+wire \motortest_0|LessThan1~0_combout ;
+wire \motortest_0|count[15]~DUPLICATE_q ;
+wire \motortest_0|LessThan0~1_combout ;
+wire \motortest_0|LessThan1~1_combout ;
+wire \motortest_0|LessThan1~2_combout ;
+wire \motortest_0|LessThan1~3_combout ;
+wire \motortest_0|count[3]~27_combout ;
+wire \motortest_0|Add0~109_sumout ;
+wire \motortest_0|count[4]~DUPLICATE_q ;
+wire \motortest_0|Add0~110 ;
+wire \motortest_0|Add0~105_sumout ;
+wire \motortest_0|Add0~106 ;
+wire \motortest_0|Add0~101_sumout ;
+wire \motortest_0|Add0~102 ;
+wire \motortest_0|Add0~45_sumout ;
+wire \motortest_0|count~13_combout ;
+wire \motortest_0|count[7]~DUPLICATE_q ;
+wire \motortest_0|Add0~46 ;
+wire \motortest_0|Add0~61_sumout ;
+wire \motortest_0|count[8]~DUPLICATE_q ;
+wire \motortest_0|Add1~46 ;
+wire \motortest_0|Add1~61_sumout ;
+wire \motortest_0|count~17_combout ;
+wire \motortest_0|Add0~62 ;
+wire \motortest_0|Add0~57_sumout ;
+wire \motortest_0|Add1~62 ;
+wire \motortest_0|Add1~57_sumout ;
+wire \motortest_0|count~16_combout ;
+wire \motortest_0|count[9]~DUPLICATE_q ;
+wire \motortest_0|Add1~58 ;
+wire \motortest_0|Add1~53_sumout ;
+wire \motortest_0|Add0~58 ;
+wire \motortest_0|Add0~53_sumout ;
+wire \motortest_0|count~15_combout ;
+wire \motortest_0|count[10]~DUPLICATE_q ;
+wire \motortest_0|Add0~54 ;
+wire \motortest_0|Add0~49_sumout ;
+wire \motortest_0|Add1~54 ;
+wire \motortest_0|Add1~49_sumout ;
+wire \motortest_0|count~14_combout ;
+wire \motortest_0|count[11]~DUPLICATE_q ;
+wire \motortest_0|Add1~50 ;
+wire \motortest_0|Add1~77_sumout ;
+wire \motortest_0|Add0~50 ;
+wire \motortest_0|Add0~77_sumout ;
+wire \motortest_0|count~21_combout ;
+wire \motortest_0|Add0~78 ;
+wire \motortest_0|Add0~73_sumout ;
+wire \motortest_0|Add1~78 ;
+wire \motortest_0|Add1~73_sumout ;
+wire \motortest_0|count~20_combout ;
+wire \motortest_0|count[13]~DUPLICATE_q ;
+wire \motortest_0|Add1~74 ;
+wire \motortest_0|Add1~69_sumout ;
+wire \motortest_0|count[14]~DUPLICATE_q ;
+wire \motortest_0|Add0~74 ;
+wire \motortest_0|Add0~69_sumout ;
+wire \motortest_0|count~19_combout ;
+wire \motortest_0|Add1~70 ;
+wire \motortest_0|Add1~65_sumout ;
+wire \motortest_0|Add0~70 ;
+wire \motortest_0|Add0~65_sumout ;
+wire \motortest_0|count~18_combout ;
+wire \motortest_0|Add1~66 ;
+wire \motortest_0|Add1~81_sumout ;
+wire \motortest_0|Add0~66 ;
+wire \motortest_0|Add0~81_sumout ;
+wire \motortest_0|count~22_combout ;
+wire \motortest_0|count[16]~DUPLICATE_q ;
+wire \motortest_0|Add1~82 ;
+wire \motortest_0|Add1~17_sumout ;
+wire \motortest_0|Add0~82 ;
+wire \motortest_0|Add0~17_sumout ;
+wire \motortest_0|count~6_combout ;
+wire \motortest_0|Add1~18 ;
+wire \motortest_0|Add1~13_sumout ;
+wire \motortest_0|Add0~18 ;
+wire \motortest_0|Add0~13_sumout ;
+wire \motortest_0|count~5_combout ;
+wire \motortest_0|Add1~14 ;
+wire \motortest_0|Add1~21_sumout ;
+wire \motortest_0|Add0~14 ;
+wire \motortest_0|Add0~21_sumout ;
+wire \motortest_0|count~7_combout ;
+wire \motortest_0|Add1~22 ;
+wire \motortest_0|Add1~37_sumout ;
+wire \motortest_0|Add0~22 ;
+wire \motortest_0|Add0~37_sumout ;
+wire \motortest_0|count~11_combout ;
+wire \motortest_0|count[20]~DUPLICATE_q ;
+wire \motortest_0|Add0~38 ;
+wire \motortest_0|Add0~33_sumout ;
+wire \motortest_0|Add1~38 ;
+wire \motortest_0|Add1~33_sumout ;
+wire \motortest_0|count~10_combout ;
+wire \motortest_0|count[21]~DUPLICATE_q ;
+wire \motortest_0|Add1~34 ;
+wire \motortest_0|Add1~29_sumout ;
+wire \motortest_0|Add0~34 ;
+wire \motortest_0|Add0~29_sumout ;
+wire \motortest_0|count~9_combout ;
+wire \motortest_0|count[22]~DUPLICATE_q ;
+wire \motortest_0|Add1~30 ;
+wire \motortest_0|Add1~25_sumout ;
+wire \motortest_0|Add0~30 ;
+wire \motortest_0|Add0~25_sumout ;
+wire \motortest_0|count~8_combout ;
+wire \motortest_0|count[23]~DUPLICATE_q ;
+wire \motortest_0|Add1~26 ;
+wire \motortest_0|Add1~9_sumout ;
+wire \motortest_0|Add0~26 ;
+wire \motortest_0|Add0~9_sumout ;
+wire \motortest_0|count~4_combout ;
+wire \motortest_0|count[24]~DUPLICATE_q ;
+wire \motortest_0|Add1~10 ;
+wire \motortest_0|Add1~42 ;
+wire \motortest_0|Add1~97_sumout ;
+wire \motortest_0|Add0~10 ;
+wire \motortest_0|Add0~42 ;
+wire \motortest_0|Add0~97_sumout ;
+wire \motortest_0|count[26]~26_combout ;
+wire \motortest_0|count[26]~DUPLICATE_q ;
+wire \motortest_0|Add1~98 ;
+wire \motortest_0|Add1~93_sumout ;
+wire \motortest_0|Add0~98 ;
+wire \motortest_0|Add0~93_sumout ;
+wire \motortest_0|count[27]~25_combout ;
+wire \motortest_0|count[27]~DUPLICATE_q ;
+wire \motortest_0|Add1~94 ;
+wire \motortest_0|Add1~89_sumout ;
+wire \motortest_0|Add0~94 ;
+wire \motortest_0|Add0~89_sumout ;
+wire \motortest_0|count[28]~24_combout ;
+wire \motortest_0|Add0~90 ;
+wire \motortest_0|Add0~5_sumout ;
+wire \motortest_0|Add1~5_sumout ;
+wire \motortest_0|count[29]~3_combout ;
+wire \motortest_0|count[29]~DUPLICATE_q ;
+wire \motortest_0|count[31]~2_combout ;
+wire \motortest_0|count[25]~DUPLICATE_q ;
+wire \motortest_0|Add0~41_sumout ;
+wire \motortest_0|Add1~41_sumout ;
+wire \motortest_0|count~12_combout ;
+wire \motortest_0|LessThan0~5_combout ;
+wire \motortest_0|LessThan0~6_combout ;
+wire \motortest_0|LessThan0~3_combout ;
+wire \motortest_0|LessThan0~4_combout ;
+wire \motortest_0|LessThan0~2_combout ;
+wire \motortest_0|LessThan0~7_combout ;
+wire \motortest_0|Add1~86 ;
+wire \motortest_0|Add1~1_sumout ;
+wire \motortest_0|LessThan1~5_combout ;
+wire \motortest_0|Add0~86 ;
+wire \motortest_0|Add0~1_sumout ;
+wire \motortest_0|count[31]~1_combout ;
+wire \motortest_0|count[31]~DUPLICATE_q ;
+wire \motortest_0|count[31]~0_combout ;
+wire \motortest_0|stepsignal~0_combout ;
+wire \motortest_0|stepsignal~q ;
+wire [31:0] \motortest_0|count ;
+
+
+// Location: IOOBUF_X46_Y0_N2
+cyclonev_io_obuf \GPIO_1[0]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[0]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[0]~output .bus_hold = "false";
+defparam \GPIO_1[0]~output .open_drain_output = "false";
+defparam \GPIO_1[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X65_Y0_N36
+cyclonev_io_obuf \GPIO_1[1]~output (
+	.i(\motortest_0|stepsignal~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[1]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[1]~output .bus_hold = "false";
+defparam \GPIO_1[1]~output .open_drain_output = "false";
+defparam \GPIO_1[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X46_Y0_N19
+cyclonev_io_obuf \GPIO_1[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[2]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[2]~output .bus_hold = "false";
+defparam \GPIO_1[2]~output .open_drain_output = "false";
+defparam \GPIO_1[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X65_Y0_N53
+cyclonev_io_obuf \GPIO_1[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[3]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[3]~output .bus_hold = "false";
+defparam \GPIO_1[3]~output .open_drain_output = "false";
+defparam \GPIO_1[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X62_Y0_N76
+cyclonev_io_obuf \GPIO_1[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[4]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[4]~output .bus_hold = "false";
+defparam \GPIO_1[4]~output .open_drain_output = "false";
+defparam \GPIO_1[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X61_Y0_N53
+cyclonev_io_obuf \GPIO_1[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[5]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[5]~output .bus_hold = "false";
+defparam \GPIO_1[5]~output .open_drain_output = "false";
+defparam \GPIO_1[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y0_N19
+cyclonev_io_obuf \GPIO_1[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[6]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[6]~output .bus_hold = "false";
+defparam \GPIO_1[6]~output .open_drain_output = "false";
+defparam \GPIO_1[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X57_Y0_N19
+cyclonev_io_obuf \GPIO_1[7]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[7]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[7]~output .bus_hold = "false";
+defparam \GPIO_1[7]~output .open_drain_output = "false";
+defparam \GPIO_1[7]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X55_Y0_N59
+cyclonev_io_obuf \GPIO_1[8]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[8]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[8]~output .bus_hold = "false";
+defparam \GPIO_1[8]~output .open_drain_output = "false";
+defparam \GPIO_1[8]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X53_Y0_N53
+cyclonev_io_obuf \GPIO_1[9]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[9]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[9]~output .bus_hold = "false";
+defparam \GPIO_1[9]~output .open_drain_output = "false";
+defparam \GPIO_1[9]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X51_Y0_N36
+cyclonev_io_obuf \GPIO_1[10]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[10]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[10]~output .bus_hold = "false";
+defparam \GPIO_1[10]~output .open_drain_output = "false";
+defparam \GPIO_1[10]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X53_Y0_N36
+cyclonev_io_obuf \GPIO_1[11]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[11]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[11]~output .bus_hold = "false";
+defparam \GPIO_1[11]~output .open_drain_output = "false";
+defparam \GPIO_1[11]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X64_Y0_N19
+cyclonev_io_obuf \GPIO_1[12]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[12]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[12]~output .bus_hold = "false";
+defparam \GPIO_1[12]~output .open_drain_output = "false";
+defparam \GPIO_1[12]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y0_N36
+cyclonev_io_obuf \GPIO_1[13]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[13]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[13]~output .bus_hold = "false";
+defparam \GPIO_1[13]~output .open_drain_output = "false";
+defparam \GPIO_1[13]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X64_Y0_N53
+cyclonev_io_obuf \GPIO_1[14]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[14]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[14]~output .bus_hold = "false";
+defparam \GPIO_1[14]~output .open_drain_output = "false";
+defparam \GPIO_1[14]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y0_N2
+cyclonev_io_obuf \GPIO_1[15]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[15]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[15]~output .bus_hold = "false";
+defparam \GPIO_1[15]~output .open_drain_output = "false";
+defparam \GPIO_1[15]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X61_Y0_N36
+cyclonev_io_obuf \GPIO_1[16]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[16]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[16]~output .bus_hold = "false";
+defparam \GPIO_1[16]~output .open_drain_output = "false";
+defparam \GPIO_1[16]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X65_Y0_N2
+cyclonev_io_obuf \GPIO_1[17]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[17]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[17]~output .bus_hold = "false";
+defparam \GPIO_1[17]~output .open_drain_output = "false";
+defparam \GPIO_1[17]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y0_N36
+cyclonev_io_obuf \GPIO_1[18]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[18]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[18]~output .bus_hold = "false";
+defparam \GPIO_1[18]~output .open_drain_output = "false";
+defparam \GPIO_1[18]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y0_N2
+cyclonev_io_obuf \GPIO_1[19]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[19]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[19]~output .bus_hold = "false";
+defparam \GPIO_1[19]~output .open_drain_output = "false";
+defparam \GPIO_1[19]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y0_N42
+cyclonev_io_obuf \GPIO_1[20]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[20]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[20]~output .bus_hold = "false";
+defparam \GPIO_1[20]~output .open_drain_output = "false";
+defparam \GPIO_1[20]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y0_N76
+cyclonev_io_obuf \GPIO_1[21]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[21]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[21]~output .bus_hold = "false";
+defparam \GPIO_1[21]~output .open_drain_output = "false";
+defparam \GPIO_1[21]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y0_N59
+cyclonev_io_obuf \GPIO_1[22]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[22]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[22]~output .bus_hold = "false";
+defparam \GPIO_1[22]~output .open_drain_output = "false";
+defparam \GPIO_1[22]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X51_Y0_N2
+cyclonev_io_obuf \GPIO_1[23]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[23]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[23]~output .bus_hold = "false";
+defparam \GPIO_1[23]~output .open_drain_output = "false";
+defparam \GPIO_1[23]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X62_Y0_N42
+cyclonev_io_obuf \GPIO_1[24]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[24]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[24]~output .bus_hold = "false";
+defparam \GPIO_1[24]~output .open_drain_output = "false";
+defparam \GPIO_1[24]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X51_Y0_N19
+cyclonev_io_obuf \GPIO_1[25]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[25]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[25]~output .bus_hold = "false";
+defparam \GPIO_1[25]~output .open_drain_output = "false";
+defparam \GPIO_1[25]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X55_Y0_N42
+cyclonev_io_obuf \GPIO_1[26]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[26]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[26]~output .bus_hold = "false";
+defparam \GPIO_1[26]~output .open_drain_output = "false";
+defparam \GPIO_1[26]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y0_N53
+cyclonev_io_obuf \GPIO_1[27]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[27]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[27]~output .bus_hold = "false";
+defparam \GPIO_1[27]~output .open_drain_output = "false";
+defparam \GPIO_1[27]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X51_Y0_N53
+cyclonev_io_obuf \GPIO_1[28]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[28]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[28]~output .bus_hold = "false";
+defparam \GPIO_1[28]~output .open_drain_output = "false";
+defparam \GPIO_1[28]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X57_Y0_N53
+cyclonev_io_obuf \GPIO_1[29]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[29]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[29]~output .bus_hold = "false";
+defparam \GPIO_1[29]~output .open_drain_output = "false";
+defparam \GPIO_1[29]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X55_Y0_N76
+cyclonev_io_obuf \GPIO_1[30]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[30]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[30]~output .bus_hold = "false";
+defparam \GPIO_1[30]~output .open_drain_output = "false";
+defparam \GPIO_1[30]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y0_N53
+cyclonev_io_obuf \GPIO_1[31]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[31]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[31]~output .bus_hold = "false";
+defparam \GPIO_1[31]~output .open_drain_output = "false";
+defparam \GPIO_1[31]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X57_Y0_N2
+cyclonev_io_obuf \GPIO_1[32]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[32]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[32]~output .bus_hold = "false";
+defparam \GPIO_1[32]~output .open_drain_output = "false";
+defparam \GPIO_1[32]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X62_Y0_N59
+cyclonev_io_obuf \GPIO_1[33]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[33]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[33]~output .bus_hold = "false";
+defparam \GPIO_1[33]~output .open_drain_output = "false";
+defparam \GPIO_1[33]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y0_N19
+cyclonev_io_obuf \GPIO_1[34]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[34]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[34]~output .bus_hold = "false";
+defparam \GPIO_1[34]~output .open_drain_output = "false";
+defparam \GPIO_1[34]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X64_Y0_N2
+cyclonev_io_obuf \GPIO_1[35]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(GPIO_1[35]),
+	.obar());
+// synopsys translate_off
+defparam \GPIO_1[35]~output .bus_hold = "false";
+defparam \GPIO_1[35]~output .open_drain_output = "false";
+defparam \GPIO_1[35]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X68_Y10_N96
+cyclonev_io_obuf \stepsignal~output (
+	.i(\motortest_0|stepsignal~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(stepsignal),
+	.obar());
+// synopsys translate_off
+defparam \stepsignal~output .bus_hold = "false";
+defparam \stepsignal~output .open_drain_output = "false";
+defparam \stepsignal~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X15_Y0_N1
+cyclonev_io_ibuf \FPGA_CLK1_50~input (
+	.i(FPGA_CLK1_50),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\FPGA_CLK1_50~input_o ));
+// synopsys translate_off
+defparam \FPGA_CLK1_50~input .bus_hold = "false";
+defparam \FPGA_CLK1_50~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G6
+cyclonev_clkena \FPGA_CLK1_50~inputCLKENA0 (
+	.inclk(\FPGA_CLK1_50~input_o ),
+	.ena(vcc),
+	.outclk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \FPGA_CLK1_50~inputCLKENA0 .clock_type = "global clock";
+defparam \FPGA_CLK1_50~inputCLKENA0 .disable_mode = "low";
+defparam \FPGA_CLK1_50~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \FPGA_CLK1_50~inputCLKENA0 .ena_register_power_up = "high";
+defparam \FPGA_CLK1_50~inputCLKENA0 .test_syn = "high";
+// synopsys translate_on
+
+// Location: IOIBUF_X46_Y0_N35
+cyclonev_io_ibuf \reset_n~input (
+	.i(reset_n),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\reset_n~input_o ));
+// synopsys translate_off
+defparam \reset_n~input .bus_hold = "false";
+defparam \reset_n~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N8
+dffeas \motortest_0|count[11] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~14_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[11] .is_wysiwyg = "true";
+defparam \motortest_0|count[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N22
+dffeas \motortest_0|count[10] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~15_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[10] .is_wysiwyg = "true";
+defparam \motortest_0|count[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N13
+dffeas \motortest_0|count[7] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~13_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[7] .is_wysiwyg = "true";
+defparam \motortest_0|count[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N30
+cyclonev_lcell_comb \motortest_0|Add1~45 (
+// Equation(s):
+// \motortest_0|Add1~45_sumout  = SUM(( \motortest_0|count [7] ) + ( VCC ) + ( !VCC ))
+// \motortest_0|Add1~46  = CARRY(( \motortest_0|count [7] ) + ( VCC ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [7]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~45_sumout ),
+	.cout(\motortest_0|Add1~46 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~45 .extended_lut = "off";
+defparam \motortest_0|Add1~45 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~45 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N0
+cyclonev_lcell_comb \motortest_0|count[3]~28 (
+// Equation(s):
+// \motortest_0|count[3]~28_combout  = !\motortest_0|count [3]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[3]~28_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[3]~28 .extended_lut = "off";
+defparam \motortest_0|count[3]~28 .lut_mask = 64'hFF00FF00FF00FF00;
+defparam \motortest_0|count[3]~28 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N50
+dffeas \motortest_0|count[28]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[28]~24_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[28]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[28]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[28]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N53
+dffeas \motortest_0|count[27] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[27]~25_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [27]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[27] .is_wysiwyg = "true";
+defparam \motortest_0|count[27] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N44
+dffeas \motortest_0|count[26] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[26]~26_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [26]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[26] .is_wysiwyg = "true";
+defparam \motortest_0|count[26] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X50_Y3_N58
+dffeas \motortest_0|count[29] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[29]~3_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [29]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[29] .is_wysiwyg = "true";
+defparam \motortest_0|count[29] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N33
+cyclonev_lcell_comb \motortest_0|Add1~89 (
+// Equation(s):
+// \motortest_0|Add1~89_sumout  = SUM(( \motortest_0|count [28] ) + ( VCC ) + ( \motortest_0|Add1~94  ))
+// \motortest_0|Add1~90  = CARRY(( \motortest_0|count [28] ) + ( VCC ) + ( \motortest_0|Add1~94  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [28]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~94 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~89_sumout ),
+	.cout(\motortest_0|Add1~90 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~89 .extended_lut = "off";
+defparam \motortest_0|Add1~89 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~89 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N36
+cyclonev_lcell_comb \motortest_0|Add1~5 (
+// Equation(s):
+// \motortest_0|Add1~5_sumout  = SUM(( \motortest_0|count [29] ) + ( VCC ) + ( \motortest_0|Add1~90  ))
+// \motortest_0|Add1~6  = CARRY(( \motortest_0|count [29] ) + ( VCC ) + ( \motortest_0|Add1~90  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [29]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~90 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~5_sumout ),
+	.cout(\motortest_0|Add1~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~5 .extended_lut = "off";
+defparam \motortest_0|Add1~5 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N39
+cyclonev_lcell_comb \motortest_0|Add1~85 (
+// Equation(s):
+// \motortest_0|Add1~85_sumout  = SUM(( \motortest_0|count[30]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~6  ))
+// \motortest_0|Add1~86  = CARRY(( \motortest_0|count[30]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~6  ))
+
+	.dataa(!\motortest_0|count[30]~DUPLICATE_q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~85_sumout ),
+	.cout(\motortest_0|Add1~86 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~85 .extended_lut = "off";
+defparam \motortest_0|Add1~85 .lut_mask = 64'h0000000000005555;
+defparam \motortest_0|Add1~85 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y3_N56
+dffeas \motortest_0|count[30] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[30]~23_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [30]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[30] .is_wysiwyg = "true";
+defparam \motortest_0|count[30] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N45
+cyclonev_lcell_comb \motortest_0|Add0~5 (
+// Equation(s):
+// \motortest_0|Add0~5_sumout  = SUM(( \motortest_0|count[29]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~90  ))
+// \motortest_0|Add0~6  = CARRY(( \motortest_0|count[29]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~90  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[29]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~90 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~5_sumout ),
+	.cout(\motortest_0|Add0~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~5 .extended_lut = "off";
+defparam \motortest_0|Add0~5 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N48
+cyclonev_lcell_comb \motortest_0|Add0~85 (
+// Equation(s):
+// \motortest_0|Add0~85_sumout  = SUM(( \motortest_0|count [30] ) + ( GND ) + ( \motortest_0|Add0~6  ))
+// \motortest_0|Add0~86  = CARRY(( \motortest_0|count [30] ) + ( GND ) + ( \motortest_0|Add0~6  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [30]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~85_sumout ),
+	.cout(\motortest_0|Add0~86 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~85 .extended_lut = "off";
+defparam \motortest_0|Add0~85 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~85 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N54
+cyclonev_lcell_comb \motortest_0|count[30]~23 (
+// Equation(s):
+// \motortest_0|count[30]~23_combout  = ( \motortest_0|Add0~85_sumout  & ( (\motortest_0|count[31]~2_combout  & ((!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~85_sumout ))) ) ) # ( !\motortest_0|Add0~85_sumout  & ( 
+// (\motortest_0|count[31]~0_combout  & (\motortest_0|Add1~85_sumout  & \motortest_0|count[31]~2_combout )) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|Add1~85_sumout ),
+	.datad(!\motortest_0|count[31]~2_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~85_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[30]~23_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[30]~23 .extended_lut = "off";
+defparam \motortest_0|count[30]~23 .lut_mask = 64'h0003000300CF00CF;
+defparam \motortest_0|count[30]~23 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y3_N55
+dffeas \motortest_0|count[30]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[30]~23_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[30]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[30]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[30]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X48_Y3_N42
+cyclonev_lcell_comb \motortest_0|LessThan1~4 (
+// Equation(s):
+// \motortest_0|LessThan1~4_combout  = ( !\motortest_0|count [26] & ( !\motortest_0|count[30]~DUPLICATE_q  & ( (!\motortest_0|count[28]~DUPLICATE_q  & !\motortest_0|count [27]) ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[28]~DUPLICATE_q ),
+	.datac(!\motortest_0|count [27]),
+	.datad(gnd),
+	.datae(!\motortest_0|count [26]),
+	.dataf(!\motortest_0|count[30]~DUPLICATE_q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~4 .extended_lut = "off";
+defparam \motortest_0|LessThan1~4 .lut_mask = 64'hC0C0000000000000;
+defparam \motortest_0|LessThan1~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N59
+dffeas \motortest_0|count[21] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~10_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [21]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[21] .is_wysiwyg = "true";
+defparam \motortest_0|count[21] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N26
+dffeas \motortest_0|count[22] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~9_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [22]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[22] .is_wysiwyg = "true";
+defparam \motortest_0|count[22] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N23
+dffeas \motortest_0|count[23] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~8_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [23]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[23] .is_wysiwyg = "true";
+defparam \motortest_0|count[23] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N17
+dffeas \motortest_0|count[20] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~11_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [20]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[20] .is_wysiwyg = "true";
+defparam \motortest_0|count[20] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N54
+cyclonev_lcell_comb \motortest_0|LessThan0~0 (
+// Equation(s):
+// \motortest_0|LessThan0~0_combout  = ( \motortest_0|count [20] & ( (\motortest_0|count [21] & (\motortest_0|count [22] & \motortest_0|count [23])) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count [21]),
+	.datac(!\motortest_0|count [22]),
+	.datad(!\motortest_0|count [23]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [20]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~0 .extended_lut = "off";
+defparam \motortest_0|LessThan0~0 .lut_mask = 64'h0000000000030003;
+defparam \motortest_0|LessThan0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N14
+dffeas \motortest_0|count[24] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~4_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [24]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[24] .is_wysiwyg = "true";
+defparam \motortest_0|count[24] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N27
+cyclonev_lcell_comb \motortest_0|LessThan1~0 (
+// Equation(s):
+// \motortest_0|LessThan1~0_combout  = ( \motortest_0|count [18] & ( (!\motortest_0|count [24] & ((!\motortest_0|LessThan0~0_combout ) # (!\motortest_0|count [19]))) ) ) # ( !\motortest_0|count [18] & ( (!\motortest_0|count [24] & 
+// ((!\motortest_0|LessThan0~0_combout ) # ((!\motortest_0|count [17]) # (!\motortest_0|count [19])))) ) )
+
+	.dataa(!\motortest_0|LessThan0~0_combout ),
+	.datab(!\motortest_0|count [24]),
+	.datac(!\motortest_0|count [17]),
+	.datad(!\motortest_0|count [19]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [18]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~0 .extended_lut = "off";
+defparam \motortest_0|LessThan1~0 .lut_mask = 64'hCCC8CCC8CC88CC88;
+defparam \motortest_0|LessThan1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N8
+dffeas \motortest_0|count[15]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~18_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[15]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[15]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[15]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N0
+cyclonev_lcell_comb \motortest_0|LessThan0~1 (
+// Equation(s):
+// \motortest_0|LessThan0~1_combout  = ( \motortest_0|count[13]~DUPLICATE_q  & ( (\motortest_0|count[15]~DUPLICATE_q  & (\motortest_0|count [12] & \motortest_0|count [14])) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[15]~DUPLICATE_q ),
+	.datac(!\motortest_0|count [12]),
+	.datad(!\motortest_0|count [14]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count[13]~DUPLICATE_q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~1 .extended_lut = "off";
+defparam \motortest_0|LessThan0~1 .lut_mask = 64'h0000000000030003;
+defparam \motortest_0|LessThan0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N26
+dffeas \motortest_0|count[9] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~16_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[9] .is_wysiwyg = "true";
+defparam \motortest_0|count[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N27
+cyclonev_lcell_comb \motortest_0|LessThan1~1 (
+// Equation(s):
+// \motortest_0|LessThan1~1_combout  = ( !\motortest_0|count [11] & ( (!\motortest_0|count [9] & (!\motortest_0|count [8] & !\motortest_0|count[10]~DUPLICATE_q )) ) )
+
+	.dataa(!\motortest_0|count [9]),
+	.datab(gnd),
+	.datac(!\motortest_0|count [8]),
+	.datad(!\motortest_0|count[10]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [11]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~1 .extended_lut = "off";
+defparam \motortest_0|LessThan1~1 .lut_mask = 64'hA000A00000000000;
+defparam \motortest_0|LessThan1~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N16
+dffeas \motortest_0|count[16] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~22_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[16] .is_wysiwyg = "true";
+defparam \motortest_0|count[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N54
+cyclonev_lcell_comb \motortest_0|LessThan1~2 (
+// Equation(s):
+// \motortest_0|LessThan1~2_combout  = ( !\motortest_0|count [16] & ( (!\motortest_0|count [18] & !\motortest_0|count [24]) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count [18]),
+	.datac(gnd),
+	.datad(!\motortest_0|count [24]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [16]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~2 .extended_lut = "off";
+defparam \motortest_0|LessThan1~2 .lut_mask = 64'hCC00CC0000000000;
+defparam \motortest_0|LessThan1~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N18
+cyclonev_lcell_comb \motortest_0|LessThan1~3 (
+// Equation(s):
+// \motortest_0|LessThan1~3_combout  = ( \motortest_0|LessThan1~2_combout  & ( (\motortest_0|count[25]~DUPLICATE_q  & (\motortest_0|LessThan0~1_combout  & ((!\motortest_0|LessThan1~1_combout ) # (\motortest_0|count[7]~DUPLICATE_q )))) ) ) # ( 
+// !\motortest_0|LessThan1~2_combout  & ( \motortest_0|count[25]~DUPLICATE_q  ) )
+
+	.dataa(!\motortest_0|count[25]~DUPLICATE_q ),
+	.datab(!\motortest_0|count[7]~DUPLICATE_q ),
+	.datac(!\motortest_0|LessThan0~1_combout ),
+	.datad(!\motortest_0|LessThan1~1_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|LessThan1~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~3 .extended_lut = "off";
+defparam \motortest_0|LessThan1~3 .lut_mask = 64'h5555555505010501;
+defparam \motortest_0|LessThan1~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N3
+cyclonev_lcell_comb \motortest_0|count[3]~27 (
+// Equation(s):
+// \motortest_0|count[3]~27_combout  = ( \motortest_0|LessThan0~7_combout  & ( ((\motortest_0|LessThan1~4_combout  & ((!\motortest_0|LessThan1~3_combout ) # (\motortest_0|LessThan1~0_combout )))) # (\motortest_0|count[31]~DUPLICATE_q ) ) ) # ( 
+// !\motortest_0|LessThan0~7_combout  & ( \motortest_0|count[31]~DUPLICATE_q  ) )
+
+	.dataa(!\motortest_0|LessThan1~4_combout ),
+	.datab(!\motortest_0|LessThan1~0_combout ),
+	.datac(!\motortest_0|count[31]~DUPLICATE_q ),
+	.datad(!\motortest_0|LessThan1~3_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|LessThan0~7_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[3]~27_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[3]~27 .extended_lut = "off";
+defparam \motortest_0|count[3]~27 .lut_mask = 64'h0F0F0F0F5F1F5F1F;
+defparam \motortest_0|count[3]~27 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N2
+dffeas \motortest_0|count[3] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[3]~28_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[3]~27_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[3] .is_wysiwyg = "true";
+defparam \motortest_0|count[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N30
+cyclonev_lcell_comb \motortest_0|Add0~109 (
+// Equation(s):
+// \motortest_0|Add0~109_sumout  = SUM(( \motortest_0|count [3] ) + ( \motortest_0|count[4]~DUPLICATE_q  ) + ( !VCC ))
+// \motortest_0|Add0~110  = CARRY(( \motortest_0|count [3] ) + ( \motortest_0|count[4]~DUPLICATE_q  ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[4]~DUPLICATE_q ),
+	.datad(!\motortest_0|count [3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~109_sumout ),
+	.cout(\motortest_0|Add0~110 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~109 .extended_lut = "off";
+defparam \motortest_0|Add0~109 .lut_mask = 64'h0000F0F0000000FF;
+defparam \motortest_0|Add0~109 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N31
+dffeas \motortest_0|count[4]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|Add0~109_sumout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[3]~27_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[4]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[4]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[4]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N33
+cyclonev_lcell_comb \motortest_0|Add0~105 (
+// Equation(s):
+// \motortest_0|Add0~105_sumout  = SUM(( \motortest_0|count [5] ) + ( VCC ) + ( \motortest_0|Add0~110  ))
+// \motortest_0|Add0~106  = CARRY(( \motortest_0|count [5] ) + ( VCC ) + ( \motortest_0|Add0~110  ))
+
+	.dataa(!\motortest_0|count [5]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~110 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~105_sumout ),
+	.cout(\motortest_0|Add0~106 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~105 .extended_lut = "off";
+defparam \motortest_0|Add0~105 .lut_mask = 64'h0000000000005555;
+defparam \motortest_0|Add0~105 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N35
+dffeas \motortest_0|count[5] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|Add0~105_sumout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[3]~27_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[5] .is_wysiwyg = "true";
+defparam \motortest_0|count[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N36
+cyclonev_lcell_comb \motortest_0|Add0~101 (
+// Equation(s):
+// \motortest_0|Add0~101_sumout  = SUM(( \motortest_0|count [6] ) + ( VCC ) + ( \motortest_0|Add0~106  ))
+// \motortest_0|Add0~102  = CARRY(( \motortest_0|count [6] ) + ( VCC ) + ( \motortest_0|Add0~106  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [6]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~106 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~101_sumout ),
+	.cout(\motortest_0|Add0~102 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~101 .extended_lut = "off";
+defparam \motortest_0|Add0~101 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add0~101 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N38
+dffeas \motortest_0|count[6] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|Add0~101_sumout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[3]~27_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[6] .is_wysiwyg = "true";
+defparam \motortest_0|count[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N39
+cyclonev_lcell_comb \motortest_0|Add0~45 (
+// Equation(s):
+// \motortest_0|Add0~45_sumout  = SUM(( \motortest_0|count[7]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add0~102  ))
+// \motortest_0|Add0~46  = CARRY(( \motortest_0|count[7]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add0~102  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[7]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~102 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~45_sumout ),
+	.cout(\motortest_0|Add0~46 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~45 .extended_lut = "off";
+defparam \motortest_0|Add0~45 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add0~45 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N12
+cyclonev_lcell_comb \motortest_0|count~13 (
+// Equation(s):
+// \motortest_0|count~13_combout  = ( \motortest_0|Add0~45_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~45_sumout ) ) ) # ( !\motortest_0|Add0~45_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~45_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|Add1~45_sumout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~45_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~13_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~13 .extended_lut = "off";
+defparam \motortest_0|count~13 .lut_mask = 64'h03030303CFCFCFCF;
+defparam \motortest_0|count~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N14
+dffeas \motortest_0|count[7]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~13_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[7]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[7]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[7]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N42
+cyclonev_lcell_comb \motortest_0|Add0~61 (
+// Equation(s):
+// \motortest_0|Add0~61_sumout  = SUM(( \motortest_0|count [8] ) + ( VCC ) + ( \motortest_0|Add0~46  ))
+// \motortest_0|Add0~62  = CARRY(( \motortest_0|count [8] ) + ( VCC ) + ( \motortest_0|Add0~46  ))
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count [8]),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~46 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~61_sumout ),
+	.cout(\motortest_0|Add0~62 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~61 .extended_lut = "off";
+defparam \motortest_0|Add0~61 .lut_mask = 64'h0000000000003333;
+defparam \motortest_0|Add0~61 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N16
+dffeas \motortest_0|count[8]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~17_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[8]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[8]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[8]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N33
+cyclonev_lcell_comb \motortest_0|Add1~61 (
+// Equation(s):
+// \motortest_0|Add1~61_sumout  = SUM(( \motortest_0|count[8]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~46  ))
+// \motortest_0|Add1~62  = CARRY(( \motortest_0|count[8]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~46  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[8]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~46 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~61_sumout ),
+	.cout(\motortest_0|Add1~62 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~61 .extended_lut = "off";
+defparam \motortest_0|Add1~61 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~61 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N15
+cyclonev_lcell_comb \motortest_0|count~17 (
+// Equation(s):
+// \motortest_0|count~17_combout  = ( \motortest_0|Add1~61_sumout  & ( (\motortest_0|Add0~61_sumout ) # (\motortest_0|count[31]~0_combout ) ) ) # ( !\motortest_0|Add1~61_sumout  & ( (!\motortest_0|count[31]~0_combout  & \motortest_0|Add0~61_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|Add0~61_sumout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~61_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~17_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~17 .extended_lut = "off";
+defparam \motortest_0|count~17 .lut_mask = 64'h0C0C0C0C3F3F3F3F;
+defparam \motortest_0|count~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N17
+dffeas \motortest_0|count[8] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~17_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[8] .is_wysiwyg = "true";
+defparam \motortest_0|count[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N45
+cyclonev_lcell_comb \motortest_0|Add0~57 (
+// Equation(s):
+// \motortest_0|Add0~57_sumout  = SUM(( \motortest_0|count[9]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add0~62  ))
+// \motortest_0|Add0~58  = CARRY(( \motortest_0|count[9]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add0~62  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[9]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~62 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~57_sumout ),
+	.cout(\motortest_0|Add0~58 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~57 .extended_lut = "off";
+defparam \motortest_0|Add0~57 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add0~57 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N36
+cyclonev_lcell_comb \motortest_0|Add1~57 (
+// Equation(s):
+// \motortest_0|Add1~57_sumout  = SUM(( \motortest_0|count[9]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~62  ))
+// \motortest_0|Add1~58  = CARRY(( \motortest_0|count[9]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~62  ))
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[9]~DUPLICATE_q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~62 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~57_sumout ),
+	.cout(\motortest_0|Add1~58 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~57 .extended_lut = "off";
+defparam \motortest_0|Add1~57 .lut_mask = 64'h0000000000003333;
+defparam \motortest_0|Add1~57 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N24
+cyclonev_lcell_comb \motortest_0|count~16 (
+// Equation(s):
+// \motortest_0|count~16_combout  = ( \motortest_0|Add1~57_sumout  & ( (\motortest_0|Add0~57_sumout ) # (\motortest_0|count[31]~0_combout ) ) ) # ( !\motortest_0|Add1~57_sumout  & ( (!\motortest_0|count[31]~0_combout  & \motortest_0|Add0~57_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(gnd),
+	.datad(!\motortest_0|Add0~57_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~57_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~16_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~16 .extended_lut = "off";
+defparam \motortest_0|count~16 .lut_mask = 64'h00CC00CC33FF33FF;
+defparam \motortest_0|count~16 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N25
+dffeas \motortest_0|count[9]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~16_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[9]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[9]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[9]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N39
+cyclonev_lcell_comb \motortest_0|Add1~53 (
+// Equation(s):
+// \motortest_0|Add1~53_sumout  = SUM(( \motortest_0|count [10] ) + ( VCC ) + ( \motortest_0|Add1~58  ))
+// \motortest_0|Add1~54  = CARRY(( \motortest_0|count [10] ) + ( VCC ) + ( \motortest_0|Add1~58  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [10]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~58 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~53_sumout ),
+	.cout(\motortest_0|Add1~54 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~53 .extended_lut = "off";
+defparam \motortest_0|Add1~53 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~53 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N48
+cyclonev_lcell_comb \motortest_0|Add0~53 (
+// Equation(s):
+// \motortest_0|Add0~53_sumout  = SUM(( \motortest_0|count[10]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~58  ))
+// \motortest_0|Add0~54  = CARRY(( \motortest_0|count[10]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~58  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[10]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~58 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~53_sumout ),
+	.cout(\motortest_0|Add0~54 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~53 .extended_lut = "off";
+defparam \motortest_0|Add0~53 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~53 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N21
+cyclonev_lcell_comb \motortest_0|count~15 (
+// Equation(s):
+// \motortest_0|count~15_combout  = ( \motortest_0|Add0~53_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~53_sumout ) ) ) # ( !\motortest_0|Add0~53_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~53_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(!\motortest_0|Add1~53_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~53_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~15_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~15 .extended_lut = "off";
+defparam \motortest_0|count~15 .lut_mask = 64'h000F000FF0FFF0FF;
+defparam \motortest_0|count~15 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N23
+dffeas \motortest_0|count[10]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~15_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[10]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[10]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[10]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N51
+cyclonev_lcell_comb \motortest_0|Add0~49 (
+// Equation(s):
+// \motortest_0|Add0~49_sumout  = SUM(( \motortest_0|count [11] ) + ( GND ) + ( \motortest_0|Add0~54  ))
+// \motortest_0|Add0~50  = CARRY(( \motortest_0|count [11] ) + ( GND ) + ( \motortest_0|Add0~54  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [11]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~54 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~49_sumout ),
+	.cout(\motortest_0|Add0~50 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~49 .extended_lut = "off";
+defparam \motortest_0|Add0~49 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~49 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N42
+cyclonev_lcell_comb \motortest_0|Add1~49 (
+// Equation(s):
+// \motortest_0|Add1~49_sumout  = SUM(( \motortest_0|count[11]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~54  ))
+// \motortest_0|Add1~50  = CARRY(( \motortest_0|count[11]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~54  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[11]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~54 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~49_sumout ),
+	.cout(\motortest_0|Add1~50 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~49 .extended_lut = "off";
+defparam \motortest_0|Add1~49 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~49 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N6
+cyclonev_lcell_comb \motortest_0|count~14 (
+// Equation(s):
+// \motortest_0|count~14_combout  = ( \motortest_0|Add1~49_sumout  & ( (\motortest_0|count[31]~0_combout ) # (\motortest_0|Add0~49_sumout ) ) ) # ( !\motortest_0|Add1~49_sumout  & ( (\motortest_0|Add0~49_sumout  & !\motortest_0|count[31]~0_combout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|Add0~49_sumout ),
+	.datad(!\motortest_0|count[31]~0_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~49_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~14_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~14 .extended_lut = "off";
+defparam \motortest_0|count~14 .lut_mask = 64'h0F000F000FFF0FFF;
+defparam \motortest_0|count~14 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N7
+dffeas \motortest_0|count[11]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~14_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[11]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[11]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[11]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N45
+cyclonev_lcell_comb \motortest_0|Add1~77 (
+// Equation(s):
+// \motortest_0|Add1~77_sumout  = SUM(( \motortest_0|count [12] ) + ( GND ) + ( \motortest_0|Add1~50  ))
+// \motortest_0|Add1~78  = CARRY(( \motortest_0|count [12] ) + ( GND ) + ( \motortest_0|Add1~50  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [12]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~50 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~77_sumout ),
+	.cout(\motortest_0|Add1~78 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~77 .extended_lut = "off";
+defparam \motortest_0|Add1~77 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add1~77 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N54
+cyclonev_lcell_comb \motortest_0|Add0~77 (
+// Equation(s):
+// \motortest_0|Add0~77_sumout  = SUM(( \motortest_0|count [12] ) + ( GND ) + ( \motortest_0|Add0~50  ))
+// \motortest_0|Add0~78  = CARRY(( \motortest_0|count [12] ) + ( GND ) + ( \motortest_0|Add0~50  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [12]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~50 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~77_sumout ),
+	.cout(\motortest_0|Add0~78 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~77 .extended_lut = "off";
+defparam \motortest_0|Add0~77 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~77 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N21
+cyclonev_lcell_comb \motortest_0|count~21 (
+// Equation(s):
+// \motortest_0|count~21_combout  = ( \motortest_0|Add0~77_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~77_sumout ) ) ) # ( !\motortest_0|Add0~77_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~77_sumout ) ) )
+
+	.dataa(!\motortest_0|count[31]~0_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|Add1~77_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~77_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~21_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~21 .extended_lut = "off";
+defparam \motortest_0|count~21 .lut_mask = 64'h00550055AAFFAAFF;
+defparam \motortest_0|count~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N23
+dffeas \motortest_0|count[12] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~21_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[12] .is_wysiwyg = "true";
+defparam \motortest_0|count[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N57
+cyclonev_lcell_comb \motortest_0|Add0~73 (
+// Equation(s):
+// \motortest_0|Add0~73_sumout  = SUM(( \motortest_0|count[13]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~78  ))
+// \motortest_0|Add0~74  = CARRY(( \motortest_0|count[13]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~78  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[13]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~78 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~73_sumout ),
+	.cout(\motortest_0|Add0~74 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~73 .extended_lut = "off";
+defparam \motortest_0|Add0~73 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~73 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N48
+cyclonev_lcell_comb \motortest_0|Add1~73 (
+// Equation(s):
+// \motortest_0|Add1~73_sumout  = SUM(( \motortest_0|count[13]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~78  ))
+// \motortest_0|Add1~74  = CARRY(( \motortest_0|count[13]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~78  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[13]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~78 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~73_sumout ),
+	.cout(\motortest_0|Add1~74 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~73 .extended_lut = "off";
+defparam \motortest_0|Add1~73 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~73 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N18
+cyclonev_lcell_comb \motortest_0|count~20 (
+// Equation(s):
+// \motortest_0|count~20_combout  = ( \motortest_0|Add1~73_sumout  & ( (\motortest_0|Add0~73_sumout ) # (\motortest_0|count[31]~0_combout ) ) ) # ( !\motortest_0|Add1~73_sumout  & ( (!\motortest_0|count[31]~0_combout  & \motortest_0|Add0~73_sumout ) ) )
+
+	.dataa(!\motortest_0|count[31]~0_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|Add0~73_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~73_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~20_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~20 .extended_lut = "off";
+defparam \motortest_0|count~20 .lut_mask = 64'h00AA00AA55FF55FF;
+defparam \motortest_0|count~20 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N20
+dffeas \motortest_0|count[13]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~20_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[13]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[13]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[13]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N51
+cyclonev_lcell_comb \motortest_0|Add1~69 (
+// Equation(s):
+// \motortest_0|Add1~69_sumout  = SUM(( \motortest_0|count [14] ) + ( GND ) + ( \motortest_0|Add1~74  ))
+// \motortest_0|Add1~70  = CARRY(( \motortest_0|count [14] ) + ( GND ) + ( \motortest_0|Add1~74  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [14]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~74 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~69_sumout ),
+	.cout(\motortest_0|Add1~70 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~69 .extended_lut = "off";
+defparam \motortest_0|Add1~69 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add1~69 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N4
+dffeas \motortest_0|count[14]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~19_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[14]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[14]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[14]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N0
+cyclonev_lcell_comb \motortest_0|Add0~69 (
+// Equation(s):
+// \motortest_0|Add0~69_sumout  = SUM(( \motortest_0|count[14]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~74  ))
+// \motortest_0|Add0~70  = CARRY(( \motortest_0|count[14]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~74  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[14]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~74 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~69_sumout ),
+	.cout(\motortest_0|Add0~70 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~69 .extended_lut = "off";
+defparam \motortest_0|Add0~69 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~69 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N3
+cyclonev_lcell_comb \motortest_0|count~19 (
+// Equation(s):
+// \motortest_0|count~19_combout  = ( \motortest_0|count[31]~0_combout  & ( \motortest_0|Add1~69_sumout  ) ) # ( !\motortest_0|count[31]~0_combout  & ( \motortest_0|Add0~69_sumout  ) )
+
+	.dataa(!\motortest_0|Add1~69_sumout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|Add0~69_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|count[31]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~19_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~19 .extended_lut = "off";
+defparam \motortest_0|count~19 .lut_mask = 64'h00FF00FF55555555;
+defparam \motortest_0|count~19 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N5
+dffeas \motortest_0|count[14] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~19_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[14] .is_wysiwyg = "true";
+defparam \motortest_0|count[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N54
+cyclonev_lcell_comb \motortest_0|Add1~65 (
+// Equation(s):
+// \motortest_0|Add1~65_sumout  = SUM(( \motortest_0|count [15] ) + ( GND ) + ( \motortest_0|Add1~70  ))
+// \motortest_0|Add1~66  = CARRY(( \motortest_0|count [15] ) + ( GND ) + ( \motortest_0|Add1~70  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [15]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~70 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~65_sumout ),
+	.cout(\motortest_0|Add1~66 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~65 .extended_lut = "off";
+defparam \motortest_0|Add1~65 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add1~65 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N3
+cyclonev_lcell_comb \motortest_0|Add0~65 (
+// Equation(s):
+// \motortest_0|Add0~65_sumout  = SUM(( \motortest_0|count[15]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~70  ))
+// \motortest_0|Add0~66  = CARRY(( \motortest_0|count[15]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~70  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[15]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~70 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~65_sumout ),
+	.cout(\motortest_0|Add0~66 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~65 .extended_lut = "off";
+defparam \motortest_0|Add0~65 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~65 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N6
+cyclonev_lcell_comb \motortest_0|count~18 (
+// Equation(s):
+// \motortest_0|count~18_combout  = ( \motortest_0|Add0~65_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~65_sumout ) ) ) # ( !\motortest_0|Add0~65_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~65_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(!\motortest_0|Add1~65_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~65_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~18_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~18 .extended_lut = "off";
+defparam \motortest_0|count~18 .lut_mask = 64'h000F000FF0FFF0FF;
+defparam \motortest_0|count~18 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N7
+dffeas \motortest_0|count[15] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~18_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[15] .is_wysiwyg = "true";
+defparam \motortest_0|count[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N57
+cyclonev_lcell_comb \motortest_0|Add1~81 (
+// Equation(s):
+// \motortest_0|Add1~81_sumout  = SUM(( \motortest_0|count[16]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~66  ))
+// \motortest_0|Add1~82  = CARRY(( \motortest_0|count[16]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~66  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[16]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~66 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~81_sumout ),
+	.cout(\motortest_0|Add1~82 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~81 .extended_lut = "off";
+defparam \motortest_0|Add1~81 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~81 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N6
+cyclonev_lcell_comb \motortest_0|Add0~81 (
+// Equation(s):
+// \motortest_0|Add0~81_sumout  = SUM(( \motortest_0|count [16] ) + ( GND ) + ( \motortest_0|Add0~66  ))
+// \motortest_0|Add0~82  = CARRY(( \motortest_0|count [16] ) + ( GND ) + ( \motortest_0|Add0~66  ))
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count [16]),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~66 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~81_sumout ),
+	.cout(\motortest_0|Add0~82 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~81 .extended_lut = "off";
+defparam \motortest_0|Add0~81 .lut_mask = 64'h0000FFFF00003333;
+defparam \motortest_0|Add0~81 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N15
+cyclonev_lcell_comb \motortest_0|count~22 (
+// Equation(s):
+// \motortest_0|count~22_combout  = ( \motortest_0|Add1~81_sumout  & ( \motortest_0|Add0~81_sumout  ) ) # ( !\motortest_0|Add1~81_sumout  & ( \motortest_0|Add0~81_sumout  & ( !\motortest_0|count[31]~0_combout  ) ) ) # ( \motortest_0|Add1~81_sumout  & ( 
+// !\motortest_0|Add0~81_sumout  & ( \motortest_0|count[31]~0_combout  ) ) )
+
+	.dataa(!\motortest_0|count[31]~0_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\motortest_0|Add1~81_sumout ),
+	.dataf(!\motortest_0|Add0~81_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~22_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~22 .extended_lut = "off";
+defparam \motortest_0|count~22 .lut_mask = 64'h00005555AAAAFFFF;
+defparam \motortest_0|count~22 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N17
+dffeas \motortest_0|count[16]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~22_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[16]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[16]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[16]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N0
+cyclonev_lcell_comb \motortest_0|Add1~17 (
+// Equation(s):
+// \motortest_0|Add1~17_sumout  = SUM(( \motortest_0|count [17] ) + ( GND ) + ( \motortest_0|Add1~82  ))
+// \motortest_0|Add1~18  = CARRY(( \motortest_0|count [17] ) + ( GND ) + ( \motortest_0|Add1~82  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [17]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~82 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~17_sumout ),
+	.cout(\motortest_0|Add1~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~17 .extended_lut = "off";
+defparam \motortest_0|Add1~17 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N9
+cyclonev_lcell_comb \motortest_0|Add0~17 (
+// Equation(s):
+// \motortest_0|Add0~17_sumout  = SUM(( \motortest_0|count [17] ) + ( GND ) + ( \motortest_0|Add0~82  ))
+// \motortest_0|Add0~18  = CARRY(( \motortest_0|count [17] ) + ( GND ) + ( \motortest_0|Add0~82  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [17]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~82 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~17_sumout ),
+	.cout(\motortest_0|Add0~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~17 .extended_lut = "off";
+defparam \motortest_0|Add0~17 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N24
+cyclonev_lcell_comb \motortest_0|count~6 (
+// Equation(s):
+// \motortest_0|count~6_combout  = ( \motortest_0|Add1~17_sumout  & ( \motortest_0|Add0~17_sumout  ) ) # ( !\motortest_0|Add1~17_sumout  & ( \motortest_0|Add0~17_sumout  & ( !\motortest_0|count[31]~0_combout  ) ) ) # ( \motortest_0|Add1~17_sumout  & ( 
+// !\motortest_0|Add0~17_sumout  & ( \motortest_0|count[31]~0_combout  ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(gnd),
+	.datae(!\motortest_0|Add1~17_sumout ),
+	.dataf(!\motortest_0|Add0~17_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~6 .extended_lut = "off";
+defparam \motortest_0|count~6 .lut_mask = 64'h00000F0FF0F0FFFF;
+defparam \motortest_0|count~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N25
+dffeas \motortest_0|count[17] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~6_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[17] .is_wysiwyg = "true";
+defparam \motortest_0|count[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N3
+cyclonev_lcell_comb \motortest_0|Add1~13 (
+// Equation(s):
+// \motortest_0|Add1~13_sumout  = SUM(( \motortest_0|count [18] ) + ( VCC ) + ( \motortest_0|Add1~18  ))
+// \motortest_0|Add1~14  = CARRY(( \motortest_0|count [18] ) + ( VCC ) + ( \motortest_0|Add1~18  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [18]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~13_sumout ),
+	.cout(\motortest_0|Add1~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~13 .extended_lut = "off";
+defparam \motortest_0|Add1~13 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N12
+cyclonev_lcell_comb \motortest_0|Add0~13 (
+// Equation(s):
+// \motortest_0|Add0~13_sumout  = SUM(( \motortest_0|count [18] ) + ( GND ) + ( \motortest_0|Add0~18  ))
+// \motortest_0|Add0~14  = CARRY(( \motortest_0|count [18] ) + ( GND ) + ( \motortest_0|Add0~18  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [18]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~13_sumout ),
+	.cout(\motortest_0|Add0~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~13 .extended_lut = "off";
+defparam \motortest_0|Add0~13 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N57
+cyclonev_lcell_comb \motortest_0|count~5 (
+// Equation(s):
+// \motortest_0|count~5_combout  = ( \motortest_0|count[31]~0_combout  & ( \motortest_0|Add1~13_sumout  ) ) # ( !\motortest_0|count[31]~0_combout  & ( \motortest_0|Add0~13_sumout  ) )
+
+	.dataa(!\motortest_0|Add1~13_sumout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|Add0~13_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|count[31]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~5 .extended_lut = "off";
+defparam \motortest_0|count~5 .lut_mask = 64'h00FF00FF55555555;
+defparam \motortest_0|count~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y3_N59
+dffeas \motortest_0|count[18] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~5_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [18]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[18] .is_wysiwyg = "true";
+defparam \motortest_0|count[18] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N6
+cyclonev_lcell_comb \motortest_0|Add1~21 (
+// Equation(s):
+// \motortest_0|Add1~21_sumout  = SUM(( \motortest_0|count [19] ) + ( GND ) + ( \motortest_0|Add1~14  ))
+// \motortest_0|Add1~22  = CARRY(( \motortest_0|count [19] ) + ( GND ) + ( \motortest_0|Add1~14  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [19]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~21_sumout ),
+	.cout(\motortest_0|Add1~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~21 .extended_lut = "off";
+defparam \motortest_0|Add1~21 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add1~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N15
+cyclonev_lcell_comb \motortest_0|Add0~21 (
+// Equation(s):
+// \motortest_0|Add0~21_sumout  = SUM(( \motortest_0|count [19] ) + ( GND ) + ( \motortest_0|Add0~14  ))
+// \motortest_0|Add0~22  = CARRY(( \motortest_0|count [19] ) + ( GND ) + ( \motortest_0|Add0~14  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [19]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~21_sumout ),
+	.cout(\motortest_0|Add0~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~21 .extended_lut = "off";
+defparam \motortest_0|Add0~21 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X48_Y3_N15
+cyclonev_lcell_comb \motortest_0|count~7 (
+// Equation(s):
+// \motortest_0|count~7_combout  = ( \motortest_0|Add1~21_sumout  & ( \motortest_0|Add0~21_sumout  ) ) # ( !\motortest_0|Add1~21_sumout  & ( \motortest_0|Add0~21_sumout  & ( !\motortest_0|count[31]~0_combout  ) ) ) # ( \motortest_0|Add1~21_sumout  & ( 
+// !\motortest_0|Add0~21_sumout  & ( \motortest_0|count[31]~0_combout  ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(gnd),
+	.datae(!\motortest_0|Add1~21_sumout ),
+	.dataf(!\motortest_0|Add0~21_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~7 .extended_lut = "off";
+defparam \motortest_0|count~7 .lut_mask = 64'h00000F0FF0F0FFFF;
+defparam \motortest_0|count~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X48_Y3_N16
+dffeas \motortest_0|count[19] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~7_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [19]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[19] .is_wysiwyg = "true";
+defparam \motortest_0|count[19] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N9
+cyclonev_lcell_comb \motortest_0|Add1~37 (
+// Equation(s):
+// \motortest_0|Add1~37_sumout  = SUM(( \motortest_0|count[20]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~22  ))
+// \motortest_0|Add1~38  = CARRY(( \motortest_0|count[20]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~22  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[20]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~37_sumout ),
+	.cout(\motortest_0|Add1~38 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~37 .extended_lut = "off";
+defparam \motortest_0|Add1~37 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~37 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N18
+cyclonev_lcell_comb \motortest_0|Add0~37 (
+// Equation(s):
+// \motortest_0|Add0~37_sumout  = SUM(( \motortest_0|count[20]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~22  ))
+// \motortest_0|Add0~38  = CARRY(( \motortest_0|count[20]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~22  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[20]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~37_sumout ),
+	.cout(\motortest_0|Add0~38 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~37 .extended_lut = "off";
+defparam \motortest_0|Add0~37 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~37 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N15
+cyclonev_lcell_comb \motortest_0|count~11 (
+// Equation(s):
+// \motortest_0|count~11_combout  = ( \motortest_0|Add0~37_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~37_sumout ) ) ) # ( !\motortest_0|Add0~37_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~37_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|Add1~37_sumout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~37_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~11_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~11 .extended_lut = "off";
+defparam \motortest_0|count~11 .lut_mask = 64'h03030303CFCFCFCF;
+defparam \motortest_0|count~11 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N16
+dffeas \motortest_0|count[20]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~11_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[20]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[20]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[20]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N21
+cyclonev_lcell_comb \motortest_0|Add0~33 (
+// Equation(s):
+// \motortest_0|Add0~33_sumout  = SUM(( \motortest_0|count[21]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~38  ))
+// \motortest_0|Add0~34  = CARRY(( \motortest_0|count[21]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~38  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[21]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~38 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~33_sumout ),
+	.cout(\motortest_0|Add0~34 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~33 .extended_lut = "off";
+defparam \motortest_0|Add0~33 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~33 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N12
+cyclonev_lcell_comb \motortest_0|Add1~33 (
+// Equation(s):
+// \motortest_0|Add1~33_sumout  = SUM(( \motortest_0|count[21]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~38  ))
+// \motortest_0|Add1~34  = CARRY(( \motortest_0|count[21]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~38  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[21]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~38 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~33_sumout ),
+	.cout(\motortest_0|Add1~34 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~33 .extended_lut = "off";
+defparam \motortest_0|Add1~33 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add1~33 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N57
+cyclonev_lcell_comb \motortest_0|count~10 (
+// Equation(s):
+// \motortest_0|count~10_combout  = ( \motortest_0|Add1~33_sumout  & ( (\motortest_0|Add0~33_sumout ) # (\motortest_0|count[31]~0_combout ) ) ) # ( !\motortest_0|Add1~33_sumout  & ( (!\motortest_0|count[31]~0_combout  & \motortest_0|Add0~33_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(!\motortest_0|Add0~33_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~33_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~10_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~10 .extended_lut = "off";
+defparam \motortest_0|count~10 .lut_mask = 64'h00F000F00FFF0FFF;
+defparam \motortest_0|count~10 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N58
+dffeas \motortest_0|count[21]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~10_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[21]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[21]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[21]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N15
+cyclonev_lcell_comb \motortest_0|Add1~29 (
+// Equation(s):
+// \motortest_0|Add1~29_sumout  = SUM(( \motortest_0|count[22]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~34  ))
+// \motortest_0|Add1~30  = CARRY(( \motortest_0|count[22]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~34  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[22]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~34 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~29_sumout ),
+	.cout(\motortest_0|Add1~30 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~29 .extended_lut = "off";
+defparam \motortest_0|Add1~29 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~29 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N24
+cyclonev_lcell_comb \motortest_0|Add0~29 (
+// Equation(s):
+// \motortest_0|Add0~29_sumout  = SUM(( \motortest_0|count[22]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~34  ))
+// \motortest_0|Add0~30  = CARRY(( \motortest_0|count[22]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~34  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[22]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~34 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~29_sumout ),
+	.cout(\motortest_0|Add0~30 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~29 .extended_lut = "off";
+defparam \motortest_0|Add0~29 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~29 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N24
+cyclonev_lcell_comb \motortest_0|count~9 (
+// Equation(s):
+// \motortest_0|count~9_combout  = ( \motortest_0|Add0~29_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~29_sumout ) ) ) # ( !\motortest_0|Add0~29_sumout  & ( (\motortest_0|Add1~29_sumout  & \motortest_0|count[31]~0_combout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|Add1~29_sumout ),
+	.datad(!\motortest_0|count[31]~0_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~29_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~9_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~9 .extended_lut = "off";
+defparam \motortest_0|count~9 .lut_mask = 64'h000F000FFF0FFF0F;
+defparam \motortest_0|count~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N25
+dffeas \motortest_0|count[22]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~9_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[22]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[22]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[22]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N18
+cyclonev_lcell_comb \motortest_0|Add1~25 (
+// Equation(s):
+// \motortest_0|Add1~25_sumout  = SUM(( \motortest_0|count[23]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~30  ))
+// \motortest_0|Add1~26  = CARRY(( \motortest_0|count[23]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~30  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[23]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~30 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~25_sumout ),
+	.cout(\motortest_0|Add1~26 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~25 .extended_lut = "off";
+defparam \motortest_0|Add1~25 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N27
+cyclonev_lcell_comb \motortest_0|Add0~25 (
+// Equation(s):
+// \motortest_0|Add0~25_sumout  = SUM(( \motortest_0|count[23]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~30  ))
+// \motortest_0|Add0~26  = CARRY(( \motortest_0|count[23]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~30  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[23]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~30 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~25_sumout ),
+	.cout(\motortest_0|Add0~26 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~25 .extended_lut = "off";
+defparam \motortest_0|Add0~25 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N21
+cyclonev_lcell_comb \motortest_0|count~8 (
+// Equation(s):
+// \motortest_0|count~8_combout  = ( \motortest_0|Add0~25_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~25_sumout ) ) ) # ( !\motortest_0|Add0~25_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~25_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(gnd),
+	.datad(!\motortest_0|Add1~25_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~25_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~8_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~8 .extended_lut = "off";
+defparam \motortest_0|count~8 .lut_mask = 64'h00330033CCFFCCFF;
+defparam \motortest_0|count~8 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N22
+dffeas \motortest_0|count[23]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~8_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[23]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[23]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[23]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N21
+cyclonev_lcell_comb \motortest_0|Add1~9 (
+// Equation(s):
+// \motortest_0|Add1~9_sumout  = SUM(( \motortest_0|count[24]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~26  ))
+// \motortest_0|Add1~10  = CARRY(( \motortest_0|count[24]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~26  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[24]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~26 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~9_sumout ),
+	.cout(\motortest_0|Add1~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~9 .extended_lut = "off";
+defparam \motortest_0|Add1~9 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N30
+cyclonev_lcell_comb \motortest_0|Add0~9 (
+// Equation(s):
+// \motortest_0|Add0~9_sumout  = SUM(( \motortest_0|count[24]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~26  ))
+// \motortest_0|Add0~10  = CARRY(( \motortest_0|count[24]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~26  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[24]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~26 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~9_sumout ),
+	.cout(\motortest_0|Add0~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~9 .extended_lut = "off";
+defparam \motortest_0|Add0~9 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N12
+cyclonev_lcell_comb \motortest_0|count~4 (
+// Equation(s):
+// \motortest_0|count~4_combout  = ( \motortest_0|Add0~9_sumout  & ( (!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~9_sumout ) ) ) # ( !\motortest_0|Add0~9_sumout  & ( (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~9_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(gnd),
+	.datad(!\motortest_0|Add1~9_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~9_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~4 .extended_lut = "off";
+defparam \motortest_0|count~4 .lut_mask = 64'h00330033CCFFCCFF;
+defparam \motortest_0|count~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N13
+dffeas \motortest_0|count[24]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~4_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[24]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[24]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[24]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N24
+cyclonev_lcell_comb \motortest_0|Add1~41 (
+// Equation(s):
+// \motortest_0|Add1~41_sumout  = SUM(( \motortest_0|count[25]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~10  ))
+// \motortest_0|Add1~42  = CARRY(( \motortest_0|count[25]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add1~10  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[25]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~41_sumout ),
+	.cout(\motortest_0|Add1~42 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~41 .extended_lut = "off";
+defparam \motortest_0|Add1~41 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add1~41 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N27
+cyclonev_lcell_comb \motortest_0|Add1~97 (
+// Equation(s):
+// \motortest_0|Add1~97_sumout  = SUM(( \motortest_0|count[26]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~42  ))
+// \motortest_0|Add1~98  = CARRY(( \motortest_0|count[26]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~42  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[26]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~42 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~97_sumout ),
+	.cout(\motortest_0|Add1~98 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~97 .extended_lut = "off";
+defparam \motortest_0|Add1~97 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~97 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N33
+cyclonev_lcell_comb \motortest_0|Add0~41 (
+// Equation(s):
+// \motortest_0|Add0~41_sumout  = SUM(( \motortest_0|count[25]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~10  ))
+// \motortest_0|Add0~42  = CARRY(( \motortest_0|count[25]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~10  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[25]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~41_sumout ),
+	.cout(\motortest_0|Add0~42 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~41 .extended_lut = "off";
+defparam \motortest_0|Add0~41 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~41 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N36
+cyclonev_lcell_comb \motortest_0|Add0~97 (
+// Equation(s):
+// \motortest_0|Add0~97_sumout  = SUM(( \motortest_0|count[26]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~42  ))
+// \motortest_0|Add0~98  = CARRY(( \motortest_0|count[26]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~42  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[26]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~42 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~97_sumout ),
+	.cout(\motortest_0|Add0~98 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~97 .extended_lut = "off";
+defparam \motortest_0|Add0~97 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~97 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N42
+cyclonev_lcell_comb \motortest_0|count[26]~26 (
+// Equation(s):
+// \motortest_0|count[26]~26_combout  = ( \motortest_0|Add0~97_sumout  & ( (\motortest_0|count[31]~2_combout  & ((!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~97_sumout ))) ) ) # ( !\motortest_0|Add0~97_sumout  & ( 
+// (\motortest_0|count[31]~0_combout  & (\motortest_0|count[31]~2_combout  & \motortest_0|Add1~97_sumout )) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|count[31]~2_combout ),
+	.datad(!\motortest_0|Add1~97_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~97_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[26]~26_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[26]~26 .extended_lut = "off";
+defparam \motortest_0|count[26]~26 .lut_mask = 64'h000300030C0F0C0F;
+defparam \motortest_0|count[26]~26 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N43
+dffeas \motortest_0|count[26]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[26]~26_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[26]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[26]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[26]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N30
+cyclonev_lcell_comb \motortest_0|Add1~93 (
+// Equation(s):
+// \motortest_0|Add1~93_sumout  = SUM(( \motortest_0|count[27]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~98  ))
+// \motortest_0|Add1~94  = CARRY(( \motortest_0|count[27]~DUPLICATE_q  ) + ( VCC ) + ( \motortest_0|Add1~98  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count[27]~DUPLICATE_q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~98 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~93_sumout ),
+	.cout(\motortest_0|Add1~94 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~93 .extended_lut = "off";
+defparam \motortest_0|Add1~93 .lut_mask = 64'h00000000000000FF;
+defparam \motortest_0|Add1~93 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N39
+cyclonev_lcell_comb \motortest_0|Add0~93 (
+// Equation(s):
+// \motortest_0|Add0~93_sumout  = SUM(( \motortest_0|count[27]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~98  ))
+// \motortest_0|Add0~94  = CARRY(( \motortest_0|count[27]~DUPLICATE_q  ) + ( GND ) + ( \motortest_0|Add0~98  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count[27]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~98 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~93_sumout ),
+	.cout(\motortest_0|Add0~94 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~93 .extended_lut = "off";
+defparam \motortest_0|Add0~93 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~93 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N51
+cyclonev_lcell_comb \motortest_0|count[27]~25 (
+// Equation(s):
+// \motortest_0|count[27]~25_combout  = ( \motortest_0|Add0~93_sumout  & ( (\motortest_0|count[31]~2_combout  & ((!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~93_sumout ))) ) ) # ( !\motortest_0|Add0~93_sumout  & ( 
+// (\motortest_0|count[31]~2_combout  & (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~93_sumout )) ) )
+
+	.dataa(!\motortest_0|count[31]~2_combout ),
+	.datab(gnd),
+	.datac(!\motortest_0|count[31]~0_combout ),
+	.datad(!\motortest_0|Add1~93_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~93_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[27]~25_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[27]~25 .extended_lut = "off";
+defparam \motortest_0|count[27]~25 .lut_mask = 64'h0005000550555055;
+defparam \motortest_0|count[27]~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N52
+dffeas \motortest_0|count[27]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[27]~25_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[27]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[27]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[27]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N42
+cyclonev_lcell_comb \motortest_0|Add0~89 (
+// Equation(s):
+// \motortest_0|Add0~89_sumout  = SUM(( \motortest_0|count [28] ) + ( GND ) + ( \motortest_0|Add0~94  ))
+// \motortest_0|Add0~90  = CARRY(( \motortest_0|count [28] ) + ( GND ) + ( \motortest_0|Add0~94  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\motortest_0|count [28]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~94 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~89_sumout ),
+	.cout(\motortest_0|Add0~90 ),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~89 .extended_lut = "off";
+defparam \motortest_0|Add0~89 .lut_mask = 64'h0000FFFF000000FF;
+defparam \motortest_0|Add0~89 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N48
+cyclonev_lcell_comb \motortest_0|count[28]~24 (
+// Equation(s):
+// \motortest_0|count[28]~24_combout  = ( \motortest_0|Add0~89_sumout  & ( (\motortest_0|count[31]~2_combout  & ((!\motortest_0|count[31]~0_combout ) # (\motortest_0|Add1~89_sumout ))) ) ) # ( !\motortest_0|Add0~89_sumout  & ( 
+// (\motortest_0|count[31]~2_combout  & (\motortest_0|count[31]~0_combout  & \motortest_0|Add1~89_sumout )) ) )
+
+	.dataa(!\motortest_0|count[31]~2_combout ),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(gnd),
+	.datad(!\motortest_0|Add1~89_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~89_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[28]~24_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[28]~24 .extended_lut = "off";
+defparam \motortest_0|count[28]~24 .lut_mask = 64'h0011001144554455;
+defparam \motortest_0|count[28]~24 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N49
+dffeas \motortest_0|count[28] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[28]~24_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [28]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[28] .is_wysiwyg = "true";
+defparam \motortest_0|count[28] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N57
+cyclonev_lcell_comb \motortest_0|count[29]~3 (
+// Equation(s):
+// \motortest_0|count[29]~3_combout  = ( \motortest_0|Add1~5_sumout  & ( (\motortest_0|count[31]~2_combout  & ((\motortest_0|Add0~5_sumout ) # (\motortest_0|count[31]~0_combout ))) ) ) # ( !\motortest_0|Add1~5_sumout  & ( (!\motortest_0|count[31]~0_combout  
+// & (\motortest_0|count[31]~2_combout  & \motortest_0|Add0~5_sumout )) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|count[31]~2_combout ),
+	.datad(!\motortest_0|Add0~5_sumout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~5_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[29]~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[29]~3 .extended_lut = "off";
+defparam \motortest_0|count[29]~3 .lut_mask = 64'h000C000C030F030F;
+defparam \motortest_0|count[29]~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y3_N59
+dffeas \motortest_0|count[29]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[29]~3_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[29]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[29]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[29]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N30
+cyclonev_lcell_comb \motortest_0|count[31]~2 (
+// Equation(s):
+// \motortest_0|count[31]~2_combout  = ( \motortest_0|LessThan0~7_combout  & ( \motortest_0|LessThan1~3_combout  ) ) # ( !\motortest_0|LessThan0~7_combout  & ( \motortest_0|LessThan1~3_combout  & ( (((!\motortest_0|LessThan1~0_combout ) # 
+// (!\motortest_0|LessThan1~4_combout )) # (\motortest_0|count[29]~DUPLICATE_q )) # (\motortest_0|count[31]~DUPLICATE_q ) ) ) ) # ( \motortest_0|LessThan0~7_combout  & ( !\motortest_0|LessThan1~3_combout  ) ) # ( !\motortest_0|LessThan0~7_combout  & ( 
+// !\motortest_0|LessThan1~3_combout  & ( ((!\motortest_0|LessThan1~4_combout ) # (\motortest_0|count[29]~DUPLICATE_q )) # (\motortest_0|count[31]~DUPLICATE_q ) ) ) )
+
+	.dataa(!\motortest_0|count[31]~DUPLICATE_q ),
+	.datab(!\motortest_0|count[29]~DUPLICATE_q ),
+	.datac(!\motortest_0|LessThan1~0_combout ),
+	.datad(!\motortest_0|LessThan1~4_combout ),
+	.datae(!\motortest_0|LessThan0~7_combout ),
+	.dataf(!\motortest_0|LessThan1~3_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[31]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[31]~2 .extended_lut = "off";
+defparam \motortest_0|count[31]~2 .lut_mask = 64'hFF77FFFFFFF7FFFF;
+defparam \motortest_0|count[31]~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N19
+dffeas \motortest_0|count[25]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~12_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[25]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[25]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[25]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N18
+cyclonev_lcell_comb \motortest_0|count~12 (
+// Equation(s):
+// \motortest_0|count~12_combout  = ( \motortest_0|Add1~41_sumout  & ( (\motortest_0|Add0~41_sumout ) # (\motortest_0|count[31]~0_combout ) ) ) # ( !\motortest_0|Add1~41_sumout  & ( (!\motortest_0|count[31]~0_combout  & \motortest_0|Add0~41_sumout ) ) )
+
+	.dataa(gnd),
+	.datab(!\motortest_0|count[31]~0_combout ),
+	.datac(!\motortest_0|Add0~41_sumout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add1~41_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count~12_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count~12 .extended_lut = "off";
+defparam \motortest_0|count~12 .lut_mask = 64'h0C0C0C0C3F3F3F3F;
+defparam \motortest_0|count~12 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y3_N20
+dffeas \motortest_0|count[25] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~12_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [25]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[25] .is_wysiwyg = "true";
+defparam \motortest_0|count[25] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N36
+cyclonev_lcell_comb \motortest_0|LessThan0~5 (
+// Equation(s):
+// \motortest_0|LessThan0~5_combout  = ( \motortest_0|count [19] & ( \motortest_0|count [22] & ( (\motortest_0|count [25] & (\motortest_0|count [20] & (\motortest_0|count [23] & \motortest_0|count [21]))) ) ) )
+
+	.dataa(!\motortest_0|count [25]),
+	.datab(!\motortest_0|count [20]),
+	.datac(!\motortest_0|count [23]),
+	.datad(!\motortest_0|count [21]),
+	.datae(!\motortest_0|count [19]),
+	.dataf(!\motortest_0|count [22]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~5 .extended_lut = "off";
+defparam \motortest_0|LessThan0~5 .lut_mask = 64'h0000000000000001;
+defparam \motortest_0|LessThan0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N6
+cyclonev_lcell_comb \motortest_0|LessThan0~6 (
+// Equation(s):
+// \motortest_0|LessThan0~6_combout  = ( !\motortest_0|count[29]~DUPLICATE_q  & ( !\motortest_0|count [27] & ( (!\motortest_0|count[28]~DUPLICATE_q  & (!\motortest_0|count [26] & ((!\motortest_0|count [25]) # (!\motortest_0|count [24])))) ) ) )
+
+	.dataa(!\motortest_0|count [25]),
+	.datab(!\motortest_0|count [24]),
+	.datac(!\motortest_0|count[28]~DUPLICATE_q ),
+	.datad(!\motortest_0|count [26]),
+	.datae(!\motortest_0|count[29]~DUPLICATE_q ),
+	.dataf(!\motortest_0|count [27]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~6 .extended_lut = "off";
+defparam \motortest_0|LessThan0~6 .lut_mask = 64'hE000000000000000;
+defparam \motortest_0|LessThan0~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y4_N19
+dffeas \motortest_0|count[13] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count~20_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[31]~2_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[13] .is_wysiwyg = "true";
+defparam \motortest_0|count[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y4_N9
+cyclonev_lcell_comb \motortest_0|LessThan0~3 (
+// Equation(s):
+// \motortest_0|LessThan0~3_combout  = ( \motortest_0|count[15]~DUPLICATE_q  & ( (\motortest_0|count [14] & (\motortest_0|count [13] & (\motortest_0|count [17] & \motortest_0|count [12]))) ) )
+
+	.dataa(!\motortest_0|count [14]),
+	.datab(!\motortest_0|count [13]),
+	.datac(!\motortest_0|count [17]),
+	.datad(!\motortest_0|count [12]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count[15]~DUPLICATE_q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~3 .extended_lut = "off";
+defparam \motortest_0|LessThan0~3 .lut_mask = 64'h0000000000010001;
+defparam \motortest_0|LessThan0~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N51
+cyclonev_lcell_comb \motortest_0|LessThan0~4 (
+// Equation(s):
+// \motortest_0|LessThan0~4_combout  = ( \motortest_0|count [17] & ( (!\motortest_0|count [18] & !\motortest_0|count [16]) ) ) # ( !\motortest_0|count [17] & ( !\motortest_0|count [18] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [18]),
+	.datad(!\motortest_0|count [16]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [17]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~4 .extended_lut = "off";
+defparam \motortest_0|LessThan0~4 .lut_mask = 64'hF0F0F0F0F000F000;
+defparam \motortest_0|LessThan0~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y4_N32
+dffeas \motortest_0|count[4] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|Add0~109_sumout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\motortest_0|count[3]~27_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[4] .is_wysiwyg = "true";
+defparam \motortest_0|count[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y4_N9
+cyclonev_lcell_comb \motortest_0|LessThan0~2 (
+// Equation(s):
+// \motortest_0|LessThan0~2_combout  = ( \motortest_0|count [5] & ( \motortest_0|count[7]~DUPLICATE_q  ) ) # ( !\motortest_0|count [5] & ( (\motortest_0|count[7]~DUPLICATE_q  & (((\motortest_0|count [6]) # (\motortest_0|count [4])) # (\motortest_0|count 
+// [3]))) ) )
+
+	.dataa(!\motortest_0|count [3]),
+	.datab(!\motortest_0|count [4]),
+	.datac(!\motortest_0|count[7]~DUPLICATE_q ),
+	.datad(!\motortest_0|count [6]),
+	.datae(gnd),
+	.dataf(!\motortest_0|count [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~2 .extended_lut = "off";
+defparam \motortest_0|LessThan0~2 .lut_mask = 64'h070F070F0F0F0F0F;
+defparam \motortest_0|LessThan0~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N0
+cyclonev_lcell_comb \motortest_0|LessThan0~7 (
+// Equation(s):
+// \motortest_0|LessThan0~7_combout  = ( \motortest_0|LessThan0~4_combout  & ( \motortest_0|LessThan0~2_combout  & ( (\motortest_0|LessThan0~6_combout  & ((!\motortest_0|LessThan0~5_combout ) # (!\motortest_0|LessThan0~3_combout ))) ) ) ) # ( 
+// !\motortest_0|LessThan0~4_combout  & ( \motortest_0|LessThan0~2_combout  & ( (!\motortest_0|LessThan0~5_combout  & \motortest_0|LessThan0~6_combout ) ) ) ) # ( \motortest_0|LessThan0~4_combout  & ( !\motortest_0|LessThan0~2_combout  & ( 
+// (\motortest_0|LessThan0~6_combout  & ((!\motortest_0|LessThan0~5_combout ) # ((!\motortest_0|LessThan0~3_combout ) # (\motortest_0|LessThan1~1_combout )))) ) ) ) # ( !\motortest_0|LessThan0~4_combout  & ( !\motortest_0|LessThan0~2_combout  & ( 
+// (!\motortest_0|LessThan0~5_combout  & \motortest_0|LessThan0~6_combout ) ) ) )
+
+	.dataa(!\motortest_0|LessThan0~5_combout ),
+	.datab(!\motortest_0|LessThan0~6_combout ),
+	.datac(!\motortest_0|LessThan1~1_combout ),
+	.datad(!\motortest_0|LessThan0~3_combout ),
+	.datae(!\motortest_0|LessThan0~4_combout ),
+	.dataf(!\motortest_0|LessThan0~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan0~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan0~7 .extended_lut = "off";
+defparam \motortest_0|LessThan0~7 .lut_mask = 64'h2222332322223322;
+defparam \motortest_0|LessThan0~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y3_N50
+dffeas \motortest_0|count[31] (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[31]~1_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count [31]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[31] .is_wysiwyg = "true";
+defparam \motortest_0|count[31] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N42
+cyclonev_lcell_comb \motortest_0|Add1~1 (
+// Equation(s):
+// \motortest_0|Add1~1_sumout  = SUM(( \motortest_0|count [31] ) + ( VCC ) + ( \motortest_0|Add1~86  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [31]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add1~86 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add1~1_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add1~1 .extended_lut = "off";
+defparam \motortest_0|Add1~1 .lut_mask = 64'h0000000000000F0F;
+defparam \motortest_0|Add1~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y3_N45
+cyclonev_lcell_comb \motortest_0|LessThan1~5 (
+// Equation(s):
+// \motortest_0|LessThan1~5_combout  = ( \motortest_0|LessThan1~3_combout  & ( (\motortest_0|LessThan1~0_combout  & (!\motortest_0|count[29]~DUPLICATE_q  & \motortest_0|LessThan1~4_combout )) ) ) # ( !\motortest_0|LessThan1~3_combout  & ( 
+// (!\motortest_0|count[29]~DUPLICATE_q  & \motortest_0|LessThan1~4_combout ) ) )
+
+	.dataa(!\motortest_0|LessThan1~0_combout ),
+	.datab(gnd),
+	.datac(!\motortest_0|count[29]~DUPLICATE_q ),
+	.datad(!\motortest_0|LessThan1~4_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|LessThan1~3_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|LessThan1~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|LessThan1~5 .extended_lut = "off";
+defparam \motortest_0|LessThan1~5 .lut_mask = 64'h00F000F000500050;
+defparam \motortest_0|LessThan1~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X50_Y3_N51
+cyclonev_lcell_comb \motortest_0|Add0~1 (
+// Equation(s):
+// \motortest_0|Add0~1_sumout  = SUM(( \motortest_0|count [31] ) + ( GND ) + ( \motortest_0|Add0~86  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\motortest_0|count [31]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\motortest_0|Add0~86 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\motortest_0|Add0~1_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|Add0~1 .extended_lut = "off";
+defparam \motortest_0|Add0~1 .lut_mask = 64'h0000FFFF00000F0F;
+defparam \motortest_0|Add0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X51_Y3_N48
+cyclonev_lcell_comb \motortest_0|count[31]~1 (
+// Equation(s):
+// \motortest_0|count[31]~1_combout  = ( \motortest_0|Add0~1_sumout  & ( ((!\motortest_0|LessThan1~5_combout  & ((\motortest_0|Add1~1_sumout ))) # (\motortest_0|LessThan1~5_combout  & (\motortest_0|LessThan0~7_combout ))) # (\motortest_0|count [31]) ) ) # ( 
+// !\motortest_0|Add0~1_sumout  & ( (\motortest_0|Add1~1_sumout  & (!\motortest_0|LessThan1~5_combout  & !\motortest_0|count [31])) ) )
+
+	.dataa(!\motortest_0|LessThan0~7_combout ),
+	.datab(!\motortest_0|Add1~1_sumout ),
+	.datac(!\motortest_0|LessThan1~5_combout ),
+	.datad(!\motortest_0|count [31]),
+	.datae(gnd),
+	.dataf(!\motortest_0|Add0~1_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[31]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[31]~1 .extended_lut = "off";
+defparam \motortest_0|count[31]~1 .lut_mask = 64'h3000300035FF35FF;
+defparam \motortest_0|count[31]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X51_Y3_N49
+dffeas \motortest_0|count[31]~DUPLICATE (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|count[31]~1_combout ),
+	.asdata(vcc),
+	.clrn(\reset_n~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|count[31]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|count[31]~DUPLICATE .is_wysiwyg = "true";
+defparam \motortest_0|count[31]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y4_N48
+cyclonev_lcell_comb \motortest_0|count[31]~0 (
+// Equation(s):
+// \motortest_0|count[31]~0_combout  = ( \motortest_0|LessThan1~0_combout  & ( (!\motortest_0|count[31]~DUPLICATE_q  & ((!\motortest_0|LessThan1~4_combout ) # (\motortest_0|count[29]~DUPLICATE_q ))) ) ) # ( !\motortest_0|LessThan1~0_combout  & ( 
+// (!\motortest_0|count[31]~DUPLICATE_q  & (((!\motortest_0|LessThan1~4_combout ) # (\motortest_0|count[29]~DUPLICATE_q )) # (\motortest_0|LessThan1~3_combout ))) ) )
+
+	.dataa(!\motortest_0|count[31]~DUPLICATE_q ),
+	.datab(!\motortest_0|LessThan1~3_combout ),
+	.datac(!\motortest_0|count[29]~DUPLICATE_q ),
+	.datad(!\motortest_0|LessThan1~4_combout ),
+	.datae(gnd),
+	.dataf(!\motortest_0|LessThan1~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|count[31]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|count[31]~0 .extended_lut = "off";
+defparam \motortest_0|count[31]~0 .lut_mask = 64'hAA2AAA2AAA0AAA0A;
+defparam \motortest_0|count[31]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X49_Y4_N51
+cyclonev_lcell_comb \motortest_0|stepsignal~0 (
+// Equation(s):
+// \motortest_0|stepsignal~0_combout  = ( \motortest_0|count[31]~0_combout  & ( !\reset_n~input_o  $ (!\motortest_0|stepsignal~q ) ) ) # ( !\motortest_0|count[31]~0_combout  & ( \motortest_0|stepsignal~q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\reset_n~input_o ),
+	.datad(!\motortest_0|stepsignal~q ),
+	.datae(gnd),
+	.dataf(!\motortest_0|count[31]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\motortest_0|stepsignal~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \motortest_0|stepsignal~0 .extended_lut = "off";
+defparam \motortest_0|stepsignal~0 .lut_mask = 64'h00FF00FF0FF00FF0;
+defparam \motortest_0|stepsignal~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y4_N53
+dffeas \motortest_0|stepsignal (
+	.clk(\FPGA_CLK1_50~inputCLKENA0_outclk ),
+	.d(\motortest_0|stepsignal~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\motortest_0|stepsignal~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \motortest_0|stepsignal .is_wysiwyg = "true";
+defparam \motortest_0|stepsignal .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X15_Y50_N0
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule

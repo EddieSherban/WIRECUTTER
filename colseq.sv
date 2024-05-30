@@ -1,4 +1,4 @@
-g/* 
+/* 
 Module: colseq
 Author: Eddie Sherban
 Date: January 22, 2023

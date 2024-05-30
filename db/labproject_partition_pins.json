@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "GPIO_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "stepsignal",
+					"strict" : false
+				},
+				{
+					"name" : "kpc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "kpc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "kpc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "kpc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK1_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "kpr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "kpr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "kpr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "kpr[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

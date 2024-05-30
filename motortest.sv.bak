@@ -1,0 +1,24 @@
+/* 
+Module: motortest
+Author: Eddie Sherban
+Date: March 31, 2023
+
+This module just tests the stepper motor to make sure that it's turning properly
+*/
+
+module motortest
+	(	input logic reset_n, clk);    // reset and clock
+	
+	always_ff @ (posedge clk, negedge reset_n) begin
+		
+		if(~reset_n) begin
+			count <= 0;
+		end
+		else begin
+		
+		
+	end
+		
+
+	
+endmodule
