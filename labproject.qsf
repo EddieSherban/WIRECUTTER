@@ -233,26 +233,16 @@ set_location_assignment PIN_AF11 -to GPIO_0[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34]
 set_location_assignment PIN_AE12 -to GPIO_0[35]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35]
-set_location_assignment PIN_Y15 -to GPIO_1[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0]
-set_location_assignment PIN_AG28 -to GPIO_1[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1]
-set_location_assignment PIN_AA15 -to GPIO_1[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2]
 set_location_assignment PIN_AH27 -to GPIO_1[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3]
 set_location_assignment PIN_AG26 -to GPIO_1[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4]
-set_location_assignment PIN_AH24 -to GPIO_1[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5]
 set_location_assignment PIN_AF23 -to GPIO_1[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6]
 set_location_assignment PIN_AE22 -to GPIO_1[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7]
 set_location_assignment PIN_AF21 -to GPIO_1[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8]
-set_location_assignment PIN_AG20 -to GPIO_1[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9]
 set_location_assignment PIN_AG19 -to GPIO_1[10]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10]
 set_location_assignment PIN_AF20 -to GPIO_1[11]
@@ -303,17 +293,24 @@ set_location_assignment PIN_AE23 -to GPIO_1[33]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33]
 set_location_assignment PIN_AA18 -to GPIO_1[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34]
-set_location_assignment PIN_AC22 -to GPIO_1[35]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment IOBANK_4A -to pins[0]
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_Y15 -to stepsignal
+set_location_assignment PIN_AA15 -to dir
+set_location_assignment PIN_AG28 -to stepsignal_2
+set_location_assignment PIN_AC22 -to testsignal
+set_global_assignment -name SYSTEMVERILOG_FILE "../../../Documents/Electrical Egneinerineign/thchool/Year 3/Term 2/Digital System Design_robert/Labs/Lab 1/quartusProject/decode7.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../../Documents/Electrical Egneinerineign/thchool/Year 3/Term 2/Digital System Design_robert/Labs/Lab 1/quartusProject/decode2.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE kpdecode.sv
 set_global_assignment -name SYSTEMVERILOG_FILE colseq.sv
 set_global_assignment -name SYSTEMVERILOG_FILE labproject.sv
 set_global_assignment -name SYSTEMVERILOG_FILE motortest.sv
 set_global_assignment -name SYSTEMVERILOG_FILE key2length.sv
+set_global_assignment -name SYSTEMVERILOG_FILE time_delay.sv
+set_location_assignment PIN_AH24 -to stepsignal_3
+set_location_assignment PIN_AG20 -to dir_2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

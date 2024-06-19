@@ -1,0 +1,8 @@
+module second_delay
+	#(parameter delay_cycles = 50000000) //second digit is input first hence substate = 0
+
+	 (	output logic delay,		// output stepsignal to motor that feeds the wire
+		input logic reset_n, clk, keyhit);   
+		
+		
+endmodule 

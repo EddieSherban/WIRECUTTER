@@ -1,22 +1,47 @@
 module labproject(output logic stepsignal,
+						output logic stepsignal_2,
+						output logic stepsignal_3,
+						output logic dir,		//direction for bending
+						output logic dir_2,	//direction for cutting
+						output logic testsignal,
+						output logic [3:0] ct,
+						output logic [7:0] leds,
+						(* altera_attribute = "-name WEAK_PULL_UP_RESISTOR ON" *)
 						output logic [3:0] kpc,
 						input logic [3:0] kpr,
 						input logic reset_n, FPGA_CLK1_50);
 						
-	logic clk ;                  // 2kHz clock for keypad scanning
-	logic kphit ;                // a key is pressed
-	logic [3:0] num ;            // value of pressed key
-	logic [31:0] length;			  // desired length of wire
-	logic onOff ;					  // determines whether button is pressed or not( maybe not needed)
+	logic clk2kHz ;                  // 2kHz clock for keypad scanning
+	logic kphit ;                		// a key is pressed
+	logic [3:0] num ;            		// value of pressed key
+	logic [31:0] key;			  			// desired length of wire
+	logic onOff ;					  		// determines whether button is pressed or not( maybe not needed)
+	
+	logic delay;
+	
+	logic [1:0] digit;
+	logic [4:0] num_0, num_1, num_2, num_3;
+	logic [7:0] leds_0, leds_1, leds_2, leds_3;
+	
+
+	
+	pll pll0 ( .inclk0(FPGA_CLK1_50), .c0(clk2kHz) ) ;
+	
+	always_ff @(posedge clk2kHz)
+		digit <= digit + 1'b1;
 	
 	
-	pll pll0 ( .inclk0(FPGA_CLK1_50), .c0(clk) ) ;	
-	
-	//instantiate modules
-	colseq colseq_0 (.kpc, .clk, .reset_n, .kpr);
+	//instantiate modules	
+	colseq colseq_0 (.kpc, .clk(clk2kHz), .reset_n, .kpr);
 	kpdecode kpdecode_0 (.kpc, .kpr, .num, .kphit);
-	key2length key2length_0 (.num, .length);
-	motortest motortest_0 (.reset_n, .stepsignal, .length, .onOff(kphit), .clk(FPGA_CLK1_50));
+	key2length key2length_0 (.num, .key);
+	time_delay time_delay_9 (.delay, .reset_n, .clk(FPGA_CLK1_50), .keyhit(kphit));
+	motortest motortest_0 (.num_0, .num_1, .num_2, .num_3, .reset_n, .stepsignal, .stepsignal_2, .stepsignal_3, .key(num), .onOff(kphit), .delay, .clk(FPGA_CLK1_50), .dir, .dir_2);
+	decode7 decode7_0 (.increased_num(num_0), .leds(leds_0)); 
+	decode7 decode7_1 (.increased_num(num_1), .leds(leds_1)); 
+	decode7 decode7_2 (.increased_num(num_2), .leds(leds_2)); 
+	decode7 decode7_3 (.increased_num(num_3), .leds(leds_3)); 
+	decode2 decode2_0 (.leds, .digit, .ct, .leds_0, .leds_1, .leds_2, .leds_3);
 
 endmodule
 

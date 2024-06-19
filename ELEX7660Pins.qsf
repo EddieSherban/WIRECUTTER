@@ -1,59 +1,3 @@
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 2022  Intel Corporation. All rights reserved.
-# Your use of Intel Corporation's design tools, logic functions 
-# and other software and tools, and any partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Intel Program License 
-# Subscription Agreement, the Intel Quartus Prime License Agreement,
-# the Intel FPGA IP License Agreement, or other applicable license
-# agreement, including, without limitation, that your use is for
-# the sole purpose of programming logic devices manufactured by
-# Intel and sold by Intel or its authorized distributors.  Please
-# refer to the applicable agreement for further details, at
-# https://fpgasoftware.intel.com/eula.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus Prime
-# Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-# Date created = 14:47:05  March 11, 2023
-#
-# -------------------------------------------------------------------------- #
-#
-# Notes:
-#
-# 1) The default values for assignments are stored in the file:
-#		labproject_assignment_defaults.qdf
-#    If this file doesn't exist, see file:
-#		assignment_defaults.qdf
-#
-# 2) Intel recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus Prime software
-#    and any changes you make may be lost or overwritten.
-#
-# -------------------------------------------------------------------------- #
-
-
-set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CSEMA4U23C6
-set_global_assignment -name TOP_LEVEL_ENTITY labproject
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:47:05  MARCH 11, 2023"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
-set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
-set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_location_assignment PIN_V11 -to CLOCK_50
 set_location_assignment PIN_AD12 -to ct[0]
 set_location_assignment PIN_AD11 -to ct[1]
@@ -68,6 +12,7 @@ set_location_assignment PIN_AF4 -to leds[4]
 set_location_assignment PIN_AF5 -to leds[5]
 set_location_assignment PIN_T13 -to leds[6]
 set_location_assignment PIN_AE7 -to leds[7]
+
 set_location_assignment PIN_T12 -to kpr[3]
 set_location_assignment PIN_AH6 -to kpr[2]
 set_location_assignment PIN_AG5 -to kpr[1]
@@ -76,15 +21,21 @@ set_location_assignment PIN_AG6 -to kpc[0]
 set_location_assignment PIN_AE4 -to kpc[1]
 set_location_assignment PIN_T11 -to kpc[2]
 set_location_assignment PIN_AF6 -to kpc[3]
+
 set_location_assignment PIN_AE8 -to rgb_din
 set_location_assignment PIN_AE9 -to rgb_clk
 set_location_assignment PIN_AF10 -to rgb_cs
 set_location_assignment PIN_AE11 -to rgb_dc
 set_location_assignment PIN_AE12 -to rgb_res
+
 set_location_assignment PIN_W8 -to spkr
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spkr
 set_location_assignment PIN_AF11 -to point
 set_location_assignment PIN_AH17 -to reset_n
+
+#============================================================
+# ADC
+#============================================================
 set_location_assignment PIN_U9 -to ADC_CONVST
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CONVST
 set_location_assignment PIN_V10 -to ADC_SCK
@@ -93,6 +44,10 @@ set_location_assignment PIN_AC4 -to ADC_SDI
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SDI
 set_location_assignment PIN_AD4 -to ADC_SDO
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SDO
+
+#============================================================
+# ARDUINO
+#============================================================
 set_location_assignment PIN_AG13 -to ARDUINO_IO[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0]
 set_location_assignment PIN_AF13 -to ARDUINO_IO[1]
@@ -127,16 +82,28 @@ set_location_assignment PIN_AG11 -to ARDUINO_IO[15]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15]
 set_location_assignment PIN_AH7 -to ARDUINO_RESET_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_RESET_N
+
+#============================================================
+# CLOCK
+#============================================================
 set_location_assignment PIN_V11 -to FPGA_CLK1_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK1_50
 set_location_assignment PIN_Y13 -to FPGA_CLK2_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK2_50
 set_location_assignment PIN_E11 -to FPGA_CLK3_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK3_50
+
+#============================================================
+# KEY
+#============================================================
 set_location_assignment PIN_AH17 -to KEY[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
 set_location_assignment PIN_AH16 -to KEY[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
+
+#============================================================
+# LED
+#============================================================
 set_location_assignment PIN_W15 -to LED[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[0]
 set_location_assignment PIN_AA24 -to LED[1]
@@ -153,6 +120,10 @@ set_location_assignment PIN_Y16 -to LED[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[6]
 set_location_assignment PIN_AA23 -to LED[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[7]
+
+#============================================================
+# SW
+#============================================================
 set_location_assignment PIN_L10 -to SW[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
 set_location_assignment PIN_L9 -to SW[1]
@@ -161,6 +132,10 @@ set_location_assignment PIN_H6 -to SW[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
 set_location_assignment PIN_H5 -to SW[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+
+#============================================================
+# GPIO_0, GPIO connect to GPIO Default
+#============================================================
 set_location_assignment PIN_V12 -to GPIO_0[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0]
 set_location_assignment PIN_AF7 -to GPIO_0[1]
@@ -233,6 +208,10 @@ set_location_assignment PIN_AF11 -to GPIO_0[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34]
 set_location_assignment PIN_AE12 -to GPIO_0[35]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35]
+
+#============================================================
+# GPIO_1, GPIO connect to GPIO Default
+#============================================================
 set_location_assignment PIN_Y15 -to GPIO_1[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0]
 set_location_assignment PIN_AG28 -to GPIO_1[1]
@@ -305,15 +284,8 @@ set_location_assignment PIN_AA18 -to GPIO_1[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34]
 set_location_assignment PIN_AC22 -to GPIO_1[35]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35]
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment IOBANK_4A -to pins[0]
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name SYSTEMVERILOG_FILE kpdecode.sv
-set_global_assignment -name SYSTEMVERILOG_FILE colseq.sv
-set_global_assignment -name SYSTEMVERILOG_FILE labproject.sv
-set_global_assignment -name SYSTEMVERILOG_FILE motortest.sv
-set_global_assignment -name SYSTEMVERILOG_FILE key2length.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+
+#============================================================
+# End of pin assignments by Terasic System Builder
+#============================================================
+
